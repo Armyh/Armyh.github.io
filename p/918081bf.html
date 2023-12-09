@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大厂为何越来越少发布设计文章？探究背后的原因 | 大象研习社</title>
+<noscript>开启Javascript是必要的</noscript>
+<link rel="icon" type="image/x-icon" href="https://vip.helloimg.com/images/2023/11/09/od4KS5.png">
+<meta name="description" content="一个平凡但不拘于世的不羁青年">
+
+    <meta name="apple-mobile-web-app-title" content="大象研习社">
+    <link rel="bookmark" href="https://vip.helloimg.com/images/2023/11/09/od4KS5.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://vip.helloimg.com/images/2023/11/09/od4KS5.png">
+
+<link rel="stylesheet" href="/css/var.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+    <script data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}" src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css">
+
+
+<link rel="stylesheet" href="/lib/snackbar.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/commentBarrage.css">
+
+    
+<script src="https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.20/twikoo.all.min.js"></script>
+
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.css">
+
+
+<script>
+    (win=> {
+            win.saveToLocal = {
+                set: function setWithExpiry(key, value, ttl) {
+                    if (ttl === 0)
+                        return
+                    const now = new Date()
+                    const expiryDay = ttl * 86400000
+                    const item = {
+                        value: value,
+                        expiry: now.getTime() + expiryDay,
+                    }
+                    localStorage.setItem(key, JSON.stringify(item))
+                },
+
+                get: function getWithExpiry(key) {
+                    const itemStr = localStorage.getItem(key)
+
+                    if (!itemStr) {
+                        return undefined
+                    }
+                    const item = JSON.parse(itemStr)
+                    const now = new Date()
+
+                    if (now.getTime() > item.expiry) {
+                        localStorage.removeItem(key)
+                        return undefined
+                    }
+                    return item.value
+                }
+            }
+
+            const DarkModeStatus = localStorage.getItem('theme')
+            if(DarkModeStatus !== null){
+                if(DarkModeStatus === 'dark'){
+                    document.documentElement.setAttribute('data-theme', 'dark')
+                }else{
+                    document.documentElement.setAttribute('data-theme', 'light')
+                }
+            }
+
+            const asideStatus = saveToLocal.get('aside-status')
+            if (asideStatus !== undefined) {
+                if (asideStatus === 'hide') {
+                    document.documentElement.classList.add('hide-aside')
+                } else {
+                    document.documentElement.classList.remove('hide-aside')
+                }
+            }
+        }
+    )(window)
+
+    console.log("%c🔥 程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：DuoSco团队 | 官网：https://github.com/DuoSco/Hexo-theme-solitude 😋", "color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
+</script>
+
+
+<script>var GLOBALCONFIG = {"root":"/","runtime":"2023-11-09 00:00:00","lazyload":{"enable":true,"error":"/img/error_load.png"},"hightlight":{"enable":true,"limit":200},"lightbox":true,"randomlinks":false,"lang":{"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"recent":"最近","yesterday":"昨天","berforeyesterday":"前天","daybefore":"天前","runtime":"天"},"sayhello":{"morning":"早上好","noon":"中午好","afternoon":"下午好","night":"晚上好","goodnight":"晚安","iam":"!  我是"},"search":{"empty":"搜索结果为空","hit":"已为您找到 ${query} 条结果","placeholder":"输入关键词快速查找"}},"covercolor":true,"comment":{"enable":true,"twikooUrl":"https://twikoo.daxiang.work/","twikooAccessToken":null}};</script><script id="site-config">var PAGECONFIG = {"is_home":false,"is_post":true,"is_page":false,"page":false,"toc":true,"comment":true};</script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body id="body">
+
+    <div id="loading-box" onclick="preloader.endLoading();" class style="zoom: 1;">
+    <div class="loading-bg">
+        <img class="loading-img nolazyload" alt="loading image"
+            src="https://vip.helloimg.com/images/2023/11/09/od4KS5.png">
+        </div>
+</div>
+<script>
+    const preloader = {
+        endLoading: () => {
+            document.getElementById('loading-box').classList.add("loaded")
+        },
+        initLoading: () => {
+            document.getElementById('loading-box').classList.remove("loaded")
+        },
+        removePaceDone: () => {
+            document.getElementById('body').classList = 'pace-done'
+        }
+    }
+    window.addEventListener('load',()=> { preloader.endLoading() })
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+</script>
+<style>
+    #loading-box {
+        -webkit-user-select: none;
+    }
+
+    #loading-box .loading-bg {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: var(--sco-background);
+        z-index: 1999;
+        opacity: 1;
+        transition: 0.2s;
+        pointer-events: all;
+        animation: showLoading 0.3s 0s backwards;
+    }
+
+    #loading-box.loaded .loading-bg {
+        pointer-events: none;
+        transition: 0.2s;
+        animation: hideLoading 0.3s 0s forwards;
+    }
+
+    #loading-box .loading-img {
+        width: 100px;
+        margin: auto;
+        animation-duration: 0.2s;
+        animation-name: loadingAction;
+        border-radius: 50px;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes loadingAction {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0.6;
+        }
+    }
+
+    @keyframes hideLoading {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes showLoading {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+<div id="console" style="zoom: 1;" class="">
+    <div class="close-btn" onclick="sco.hideConsole()" href="javascript:void(0);">
+        <i class="scoicon sco-close-fill"></i>
+    </div>
+    
+        <div class="console-card-group">
+            <div class="console-card-group-left">
+                <div class="console-card" id="card-newest-comments" onclick="sco.hideConsole()">
+                    <div class="card-content">
+                        <div class="author-content-item-tips">互动</div>
+                        <div class="author-content-item-title">最新评论</div>
+                    </div>
+                    <div class="aside-list"></div>
+                </div>
+
+            </div>
+            <div class="console-card-group-right">
+                <div class="console-card tags" onclick="sco.hideConsole()">
+                    <div class="card-content">
+                        <div class="author-content-item-tips">标签</div>
+                        <div class="author-content-item-title">寻找感兴趣的领域</div>
+                    </div>
+                    <div class="card-tag-cloud">
+                        
+                            <a href="/tags/Markdown/"
+                               style="font-size: 0.8rem; color: #d3d3d3">Markdown
+                                <sup>1</sup></a>
+                        
+                            <a href="/tags/%E6%95%99%E7%A8%8B/"
+                               style="font-size: 0.8rem; color: #d3d3d3">教程
+                                <sup>2</sup></a>
+                        
+                            <a href="/tags/Stable-Diffusion/"
+                               style="font-size: 0.8rem; color: #d3d3d3">Stable Diffusion
+                                <sup>1</sup></a>
+                        
+                            <a href="/tags/LoRA/"
+                               style="font-size: 0.8rem; color: #d3d3d3">LoRA
+                                <sup>1</sup></a>
+                        
+                            <a href="/tags/%E5%BF%85%E7%9C%8B/"
+                               style="font-size: 0.8rem; color: #d3d3d3">必看
+                                <sup>3</sup></a>
+                        
+                            <a href="/tags/CDN/"
+                               style="font-size: 0.8rem; color: #d3d3d3">CDN
+                                <sup>1</sup></a>
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"
+                               style="font-size: 0.8rem; color: #d3d3d3">前端开发
+                                <sup>1</sup></a>
+                        
+                            <a href="/tags/AI%E7%BB%98%E7%94%BB/"
+                               style="font-size: 0.8rem; color: #d3d3d3">AI绘画
+                                <sup>3</sup></a>
+                        
+                            <a href="/tags/%E7%83%AD%E9%97%A8/"
+                               style="font-size: 0.8rem; color: #d3d3d3">热门
+                                <sup>3</sup></a>
+                        
+                            <a href="/tags/Photoshop/"
+                               style="font-size: 0.8rem; color: #d3d3d3">Photoshop
+                                <sup>1</sup></a>
+                        
+                    </div>
+                </div>
+                <div class="console-card history" onclick="sco.hideConsole()">
+                    <ul class="card-archive-list">
+    
+    
+        <li class="card-archive-list-item"><a class="card-archive-list-link" onclick="pjax.loadUrl('/archives/2023/11/')" data-pjax-state=""><span
+            class="card-archive-list-date">2023/11</span>
+            <div class="card-archive-list-count-group"><span class="card-archive-list-count">14</span><span
+                    class="card-archive-list-count-unit">篇</span></div>
+            </a>
+        </li>
+        
+</ul>
+
+                </div>
+            </div>
+        </div>
+    
+
+    <div class="button-group">
+        <div class="console-btn-item">
+            <a class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="显示模式切换"
+               href="javascript:void(0);" rel="external nofollow" data-pjax-state="">
+                <i class="scoicon sco-moon-clear-fill" style="font-size: 1rem;"></i>
+            </a>
+        </div>
+        <div class="console-btn-item" id="consoleHideAside">
+            <a class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"
+               href="javascript:void(0);" rel="external nofollow" data-pjax-state="">
+                <i class="scoicon sco-side-bar-fill" style="font-size: 1rem;"></i>
+            </a>
+        </div>
+        
+            <div class="console-btn-item" id="consoleMusic" onclick="sco.musicToggle()" title="音乐开关">
+                <a class="music-switch">
+                    <i class="scoicon sco-disc-fill"></i>
+                </a>
+            </div>
+        
+        
+            <div class="console-btn-item on" id="consoleCommentBarrage" onclick="sco.switchCommentBarrage()"
+                 title="热评开关">
+                <a class="commentBarrage">
+                    <i class="scoicon sco-chat-fill"></i>
+                </a>
+            </div>
+        
+    </div>
+    <div class="console-mask" onclick="sco.hideConsole()" href="javascript:void(0);" rel="external nofollow"></div>
+</div>
+<div id="sidebar" style="zoom: 1;">
+    <div id="menu-mask" style="display: none;"></div>
+    <div id="sidebar-menus" class>
+        <span class="sidebar-menu-item-title">功能</span>
+        <div class="sidebar-menu-item">
+            <a class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()" title="显示模式切换"
+               href="javascript:void(0);" rel="external nofollow">
+                <i class="scoicon sco-moon-clear-fill" style="font-size: 1rem;"></i>
+                <span>显示模式</span>
+            </a>
+        </div>
+        
+        <div class="menus_items">
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 文库</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/archives/">
+                                <i class="scoicon sco-folder-fill"></i>
+                                <span> 文章列表</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/categories/">
+                                <i class="scoicon sco-checkbox-multiple-blank-fill"></i>
+                                <span> 全部分类</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/tags/">
+                                <i class="scoicon sco-price-tag-fill"></i>
+                                <span> 全部标签</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 专栏</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/">
+                                <i class=""></i>
+                                <span> 设计分享</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/">
+                                <i class=""></i>
+                                <span> 设计工具</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 友链</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/links/">
+                                <i class="scoicon sco-group-fill"></i>
+                                <span> 友情链接</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 我的</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/tlink/">
+                                <i class="scoicon sco-tools-fill"></i>
+                                <span> 工具箱</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/about/">
+                                <i class="scoicon sco-contacts-fill"></i>
+                                <span> 关于本站</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+</div>
+        <span class="sidebar-menu-item-title">标签</span>
+        <div class="card-widget card-tags card-archives card-webinfo card-allinfo">
+            <div class="item-headline">
+                <i class="scoicon sco-price-tag-fill"></i>
+                <span>标签</span>
+            </div>
+            <div class="card-tag-cloud">
+                
+                    <a href="/tags/Markdown/" style="font-size: 1em; color: #d3d3d3">Markdown
+                        <sup>1</sup>
+                    </a>
+                
+                    <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1em; color: #d3d3d3">教程
+                        <sup>2</sup>
+                    </a>
+                
+                    <a href="/tags/Stable-Diffusion/" style="font-size: 1em; color: #d3d3d3">Stable Diffusion
+                        <sup>1</sup>
+                    </a>
+                
+                    <a href="/tags/LoRA/" style="font-size: 1em; color: #d3d3d3">LoRA
+                        <sup>1</sup>
+                    </a>
+                
+                    <a href="/tags/%E5%BF%85%E7%9C%8B/" style="font-size: 1em; color: #d3d3d3">必看
+                        <sup>3</sup>
+                    </a>
+                
+                    <a href="/tags/CDN/" style="font-size: 1em; color: #d3d3d3">CDN
+                        <sup>1</sup>
+                    </a>
+                
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 1em; color: #d3d3d3">前端开发
+                        <sup>1</sup>
+                    </a>
+                
+                    <a href="/tags/AI%E7%BB%98%E7%94%BB/" style="font-size: 1em; color: #d3d3d3">AI绘画
+                        <sup>3</sup>
+                    </a>
+                
+                    <a href="/tags/%E7%83%AD%E9%97%A8/" style="font-size: 1em; color: #d3d3d3">热门
+                        <sup>3</sup>
+                    </a>
+                
+                    <a href="/tags/Photoshop/" style="font-size: 1em; color: #d3d3d3">Photoshop
+                        <sup>1</sup>
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+</div>    
+
+
+    <div class="post" id="body-wrap">
+        <header class="post-bg" id="page-header">
+    <nav id="nav" class="show">
+    <div id="nav-group">
+        <div id="blog_name">
+            
+            <a id="site-name" href="/" title="返回博客主页" target="_self">
+                    
+                        <img src= "/img/loading.gif" data-lazy-src="https://vip.helloimg.com/images/2023/11/10/odlvE5.png"></img>
+                      
+            </a>
+        </div>
+        <div id="page-name-mask">
+            <div id="page-name">
+                <a id="page-name-text" onclick="sco.toTop()">大厂为何越来越少发布设计文章？探究背后的原因</a>
+            </div>
+        </div>
+        <div id="menus">
+            <div class="menus_items">
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 文库</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/archives/">
+                                <i class="scoicon sco-folder-fill"></i>
+                                <span> 文章列表</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/categories/">
+                                <i class="scoicon sco-checkbox-multiple-blank-fill"></i>
+                                <span> 全部分类</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/tags/">
+                                <i class="scoicon sco-price-tag-fill"></i>
+                                <span> 全部标签</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 专栏</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/">
+                                <i class=""></i>
+                                <span> 设计分享</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/">
+                                <i class=""></i>
+                                <span> 设计工具</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 友链</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/links/">
+                                <i class="scoicon sco-group-fill"></i>
+                                <span> 友情链接</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 我的</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/tlink/">
+                                <i class="scoicon sco-tools-fill"></i>
+                                <span> 工具箱</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/about/">
+                                <i class="scoicon sco-contacts-fill"></i>
+                                <span> 关于本站</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+</div>
+        </div>
+        <div id="nav-left">
+        </div>
+        <div id="nav-right">
+            
+    <div class="nav-button only-home" id="travellings_button">
+        <a class="site-page"  target="_blank" rel="noopener external nofollow" href="https://www.travellings.cn/go.html" title="开往-友链接力"  width="120">
+            <i class="scoicon sco-train-line" style="font-size: 1rem;"></i>
+        </a>
+    </div>
+
+
+    <div class="nav-button" id="randomPost_button">
+        <a class="site-page" onclick="toRandomPost()"
+            title="随机前往一个文章">
+            <i class="scoicon sco-signal-tower-fill" style="font-size: 1rem;"></i>
+        </a>
+    </div>
+
+
+
+    <div class="nav-button" id="nav-console">
+        <a class="console_switchbutton" onclick="sco.showConsole()"
+        title="显示中控台" href="javascript:void(0);" rel="external nofollow">
+        <i class="scoicon sco-dashboard-fill" style="font-size: 1rem;"></i>
+        </a>
+    </div>
+
+<div class="nav-button" id="nav-totop" onclick="sco.toTop()">
+    <a class="totopbtn">
+        <i class="scoicon sco-arrow-up-line"></i>
+        <span id="percent">0</span>
+    </a>
+</div>
+<div id="toggle-menu">
+    <a class="site-page">
+        <i class="scoicon sco-menu-line" style="font-size: 1rem;"></i>
+    </a>
+</div>
+        </div>
+    </div>
+</nav>
+    
+        <div class="coverdiv" id="coverdiv">
+    <img id="post-cover" class="nolazyload" src="https://img.daxiang.work/202311231937434.jpg" alt="cover">
+</div>
+<div id="post-info">
+    <div id="post-firstinfo">
+        <div class="meta-firstline">
+            <a class="post-meta-original" title="该文章为原创文章，注意版权协议">
+                原创
+            </a>
+            
+                <span class="post-meta-categories">
+                    
+                        <a class="post-meta-categories" href="/categories/%E9%97%B2%E8%81%8A%E6%9D%82%E8%B0%88/">闲聊杂谈</a>
+                    
+                </span>
+            
+            <div class="tag_share">
+                <div class="post-meta__tag-list">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="post-title">大厂为何越来越少发布设计文章？探究背后的原因</h1>
+    <div id="post-meta">
+        <div class="meta-secondline">
+            
+                <span class="post-meta-date" title="发布于">
+                <i class="post-meta-icon scoicon sco-calendar-todo-fill"></i>
+                <time datetime="2023-11-14T00:00:01+08:00"></time>
+            </span>
+            
+            
+                <span class="post-meta-date" title="更新于">
+                    <i class="post-meta-icon scoicon sco-refresh-line"></i>
+                    <time datetime="2023-11-24T00:49:15+08:00"></time>
+                </span>
+            
+            
+                <span class="post-meta-position" title="作者IP归属地为中国">
+                    <i class="post-meta-icon scoicon sco-map-pin-fill"></i>
+                    <span>中国</span>
+                </span>
+            
+            
+                
+                    <span class="post-meta-wordcount">
+                        <i class="scoicon sco-word-fill post-meta-icon" title="文章字数"></i>
+                        <span class="word-count">3.3k</span>
+                    </span>
+                
+                
+                    <span class="post-meta-time">
+                        <i class="scoicon sco-clock-fill post-meta-icon" title="阅读耗时"></i>
+                        <span>11 min</span>
+                    </span>
+                
+            
+            
+                <span class="post-meta-pv" title="文章热度">
+                    <i class="scoicon sco-fire-fill post-meta-icon"></i>
+                    
+                        <span id="twikoo_visitors"><i class="scoicon sco-loading-line"></i></span>
+                    
+                </span>
+            
+            
+                <span class="post-meta-commentcount" title="评论数">
+                    <i class="scoicon sco-chat-fill"></i>
+                    <a href="#post-comment">
+                        <span id="twikoo-count"><i class="scoicon sco-loading-line"></i></span>
+                    </a>
+                </span>
+            
+        </div>
+    </div>
+</div>
+<section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg"
+    xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+        <path id="gentle-wave"
+            d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path>
+    </defs>
+    <g class="parallax">
+        <use href="#gentle-wave" x="48" y="0"></use>
+        <use href="#gentle-wave" x="48" y="3"></use>
+        <use href="#gentle-wave" x="48" y="5"></use>
+        <use href="#gentle-wave" x="48" y="7"></use>
+    </g>
+</svg>
+</section>
+        
+</header>
+        <main class="layout" id="content-inner">
+    <div id="post">
+        <article class="post-content" id="article-container">
+            <p>相比几年前，大家有没有发现，现在很多大厂UED 团队越来越少地对外发设计文章了？</p>
+<p>其实不光是大的设计团队，连很多设计公众号也开始很少更新了。我以前关注过不少设计号，到现在很多都断更了。一些所谓的设计大号，写的内容也越来越远离设计。</p>
+<p>前段时间，不是腾讯CDC解散了嘛，我其实还是挺震惊的。记得当年我入行那会，CDC可是设计界的黄埔军校，输出了非常多的高质量设计文章，培养了国内最早一批顶尖设计师。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311231937434.jpg" alt=""></p>
+<p>前段时间发现ISUX开始设计征稿了，回想我自己这个号从18年开始更新到现在，也坚持写了300多篇设计专业文章，有感而发。</p>
+<p>所以，今天我想和大家聊聊写文章这事。</p>
+<p>有人会问，为什么优质的设计文章越来越少了？</p>
+<p>这里面可能有几个原因，和大家聊聊我的一些想法。</p>
+<hr>
+<h3 id="1、各种设计方法，相对成熟">1、各种设计方法，相对成熟</h3>
+<p>看公众号文章比较多的朋友，可能经常看到写设计原理的，比如格式塔设计理论，设计心理学理论，教你画图标的，做卡片设计的等等，相信都已经读过太多篇了。</p>
+<p>我18年那会刚开始写公众号，最初多以翻译国外设计文章为主，那时候我做这件事的目的就是为了学习设计理论，那会也确实能找到非常多的好文章。</p>
+<p>但写的多了，看的多了，现在再去看那些老外的文章，就会发现写来写去，这么多年了，依然还是讲那些东西。很多内容非常基础，我看的也没什么动力，也就没太多兴趣翻译给大家看了。</p>
+<p>早期关注我号的朋友，现在很多也已经是行业内的资深设计师了，估计也很少会看公众号的文章。这些年一直有关注彩云，且每篇都阅读的同学不知道还有没有？可以在评论区留个言。</p>
+<p>如果再用心一点的老粉丝，你可能会发现我的这个号几乎把设计的方方面面都写过一遍了。基本上平时在设计群里大家问的设计问题，我在过去都写过了。</p>
+<p>但在行业早期，各种设计规范、软件工具、设计流程都不成熟，可以写的话题非常广泛。</p>
+<p>那时候处于行业爆发期，涌入了大量想要快速提升自己的设计师们，他们也需要这样的文章帮助学习设计知识。</p>
+<p>**有人看，有东西写，自然能鼓励更多人输出文章。**但现在随着行业成熟，会发现几乎所有的常见话题都有人写过了。</p>
+<p>而一些更为深度的项目经验往往又比较敏感，不适合直接拿出来分享。在存量竞争时代，项目安全要求更高，能写的东西很少。</p>
+<p>伴随行业成熟，就业难，涌入行业的新人也在变少。<strong>看的人少了，能写的东西也少了，自然写文章的成本就变得越来越高。</strong></p>
+<p>前几天有个设计师问我，想找有关字体原理方面的设计文章，他查到的大多数还是五六年前的，问我有没有哪里有最新的文章可以看？</p>
+<p>我回答说，既然是原理性的文章，那应该是经久不衰的，即使是多年前的文章，也应该是值得参考的。</p>
+<p>反过来想，也能说明一个事实，就是一旦一个好的理论讲清楚了，再写的价值就没那么高了，因为如果没有什么太多修正的话，基本上也就没啥太多写的动力了。</p>
+<hr>
+<h3 id="2、输出的价值影响力，难以量化">2、输出的价值影响力，难以量化</h3>
+<p>在大厂设计团队，经常会有文章 kpi，意思是每个团队每年必须要完成多少篇文章输出，作为提升团队对外的影响力。</p>
+<p>可能有不少设计师对写设计文章嗤之以鼻，觉得挺浪费时间的，有那时间还不如多画几张图。但以我的经验来说，写文章这事，对团队和个人都有很多好处。</p>
+<p>对设计团队来说，增强了在行业中的影响力，设计能被更多人知道和认可。</p>
+<p><strong>文章让大家有机会了解到每一次产品改版背后的思考，通过一些细微之处的用户体验优化，体会到设计师的用心</strong>。对于产品传播和舆论来说，是有不少好处的。</p>
+<p>对个人来说，复盘项目，提升设计思考能力，甚至还能作为晋升材料，可谓是收益颇丰。从某个角度上来说，写文章对于个人的帮助可能会更大。</p>
+<p>但对于公司来说，这种好处却难以量化。</p>
+<p>影响力这玩意，是个玄学，到底能带来多少产品上的收益，是很难被计算的。而公司喜欢确定性，喜欢任何ROI都能够被准确计算出来，这才符合商业逻辑。</p>
+<p>所以，在长期难以量化其价值的情况下，减少写文章的时间投入，对于公司来说，是一个相对理性的选择。</p>
+<hr>
+<h3 id="3、经济下行，越来越务实">3、经济下行，越来越务实</h3>
+<p>我记得我刚进腾讯那会儿，转正和晋升是非常考察设计方法论的，基本上你的PPT里必须得有你的设计方法论。然后部门也经常会组织各种分享会，我当时也参与了几次分享，为了做分享PPT没少掉头发。</p>
+<p>现在这块已经慢慢的被淡化了，大家似乎不再单纯追求设计方法论包装，而是看实在的业务贡献。比如在项目中到底做了哪些具体的事情，提升了多少数据，得把设计方法融入具体的业务中。</p>
+<p>把方法论讲得天花乱坠，实际设计一塌糊涂，这种情况是现在很多设计师在犯的毛病，有可能就是受之前大厂的影响。但与大厂不同的是，大厂在讲方法论的同时，本身的设计专业能力是没问题的，如果只是片面理解方法论重要，执行不重要，那就会出问题。</p>
+<p>这里多说一嘴，有人常说大厂是生成螺丝钉的地方，我其实对这个说法持保留意见，准确说是要看实际具体业务来的。</p>
+<p>就像我是以UI设计师的岗位进的腾讯，去的时候完全没接触过3D，游戏美术那些。但后面由于业务变化，我陆续学了3D，引擎，技术美术，游戏美术，项目管理等等技能。<strong>基本上只要你愿意，大厂还是会给到你很多学习和发挥的空间。</strong></p>
+<p>设计趋势往往也是从大厂开始的，这一点不可否认。现在市面上很多套方法论的作品集，就好像是5-6年前大厂的作品展示方法，不过现在大厂已经慢慢不这么做了。但在外面的中小厂，似乎是学了多年前大厂的设计经验，又滞后了自己的设计方法。</p>
+<p>在经济高速增长的年代，团队有精力去做一些锦上添花的事情，比如写文章，做分享会等等。但在经济下行的时候，可能会更看重短期价值，那么把更需要打磨好的业务做好就是性价比更高的。</p>
+<p><strong>大家变得更加务实了。</strong></p>
+<p>在行业早期，大的设计团队意味着专业，把很多还不成熟的设计方法集合成专业力量。设计团队有机会在一起讨论推进，那时候的这种方式是非常适合当时的业务发展。</p>
+<p>而现在，随着业务的变化，大的设计团队价值可能变得不再灵活，业务竞争的速度越来越快，设计方法也越来越成熟。</p>
+<p>此时，需要设计师要更深入的理解业务，理解用户，与产品联系的更为紧密，那么在设计团队中接单的方式就变得效率不高。</p>
+<p>可能是这样的原因，像之前很出名的TGideas，CDC被解散了，似乎也就能理解了。</p>
+<p>大厂的设计师们已经变得越来越务实了，好好把设计做好，提升业务营收能力，更加重要。</p>
+<hr>
+<h3 id="4、人力减少，降本增效">4、人力减少，降本增效</h3>
+<p>这两年，大厂的降本增效，大家应该也能感受得到，业务都顾不过来，自然就没那么多时间写文章。</p>
+<p>以前在业务扩张期，一般的设计团队都会提前招聘一些设计师作为储备，规划出来HC也比较多。人多了，业务可能又没那么多。团队内部每个人为了体现自身价值，可能就喜欢去“搞事情”，所谓的“卷”就是这样来的。然后就有了富余的精力做研究，做分享，写文章，提升设计专业价值和影响力。</p>
+<p>但随着业务收缩，业务上必须盘点清楚，每个人的产出是什么，甚至在一些小的团队，每个方向有1个设计师就够了。</p>
+<p>所以，当工作量计算到足够精确后，也就没那么多时间再去写文章，做分享了，把活干完要紧。</p>
+<hr>
+<h3 id="5、注意力被分散">5、注意力被分散</h3>
+<p>我有时候会在地铁上留心观察了下，在地铁上看到最多的就是刷抖音。</p>
+<p>大家的注意力都被短视频给吸引了，这些短视频的节奏就如同生活和工作的节奏一样，足够的效率。人的天性就不喜欢苦和累的东西，短视频和八卦一样，能以最高效率让人产生多巴胺，满足即时的快感，然后让人深陷其中。</p>
+<p>当人越来越喜欢即时享乐的时候，注意力被短视频给占据时，文章的吸引力也就正在减少。</p>
+<p>或许是大家真的累了，不愿意再花大量的精力去阅读专业上的内容，学习毕竟是反人性的事情，费脑子。</p>
+<p>看的人少了，写的人动力也就少了，专注在这块的高质量文章自然就在减少。</p>
+<hr>
+<h3 id="最后">最后</h3>
+<p>透过文章背后的这些情况，其实也能窥见行业的发展趋势，为什么求职招聘现在越来越难？似乎也就不难理解了。</p>
+<p><strong>当我们看到一个现象出现的时候，往往背后正隐藏着更大的洪流，由点及面的思考，或许正是我们需要的，这是一种深度思考的方法。</strong></p>
+<p>再说说我的这个号，一些掏心窝子的话。</p>
+<p>从2018年建号开始，我保持着每周一更新一篇原创设计文章或设计译文，从来不靠转载文章凑数。</p>
+<p>我知道对于你们来说应该并不在意，但对我来说，我的信念就是说话算数，近乎偏执。建号的时候就定了每周一更新文章，然后这一坚持就是5年多。</p>
+<p>这些文章的背后是牺牲掉的每个周末，其实也没什么收益，甚至看的人还在减少，也不知道自己为何要如此固执的坚持写。</p>
+<p>经常写文章，有时候给的正反馈挺让人无奈的，明明写的是真干货，但看的人就是不如那些写设计营销文的看的多。</p>
+<p>八卦爽文当然比干货好看，这也容易理解，人天生就是不爱学习的。因为每周只发一篇文章，所以我自己内心是很希望每一篇文章起码能输出一些真的有价值的内容给到阅读的人，我甚至给自己下规定，一篇文章至少要超过2000字才算是有诚意，虽然没人这样要求我。</p>
+<p>**珍惜我这个号吧，**给我多一些正反馈，说不定哪天我也没动力更新了，你就又少了一个还有点坚持的优质号了。</p>
+<p>学会延迟满足，学习掌控更高级的快乐，这个时代最珍贵的品质。当别人在刷抖音，你在认真看优质文章，阅读好的书籍，你不成功谁成功？</p>
+<p><strong>全文完，既然看到这里了，如果觉得不错，随手分享一下文章吧。</strong></p>
+<p>作者：彩云sky (id:caiyunyisheji)</p>
+
+        </article>
+        <div class="post-copyright">
+    <div class="post-copyright__author_group">
+        <a class="post-copyright__author_img" href="/about/"
+           data-pjax-state="">
+            <img class="post-copyright__author_img_back"
+                 src="https://bu.dusays.com/2023/11/01/6541f6d4b2573.png">
+            <img class="post-copyright__author_img_front"
+                 src="https://vip.helloimg.com/images/2023/11/09/od4KS5.png"></a>
+        <div class="post-copyright__author_name">大象研习社</div>
+        <div class="post-copyright__author_desc">万事相宜，千般吉愿。</div>
+    </div>
+    <div class="post-tools" id="post-tools">
+        <div class="post-tools-left">
+            
+            
+                <div class="reward-link mode">
+                    <a class="reward-link-button" href="">
+                        <i class="scoicon sco-plant-fill"></i>
+                        订阅
+                    </a>
+                </div>
+            
+        </div>
+    </div>
+    <div class="post-copyright__notice">
+        <span class="post-copyright-info">
+            本文是原创文章，
+            
+                采用 <a href="/copyright/" target="_blank">CC BY-NC-ND 4.0</a>
+                协议，完整转载请注明来自
+                <a href="/" target="_blank">大象研习社</a>
+            
+        </span>
+    </div>
+</div>
+
+        <div class="post-tools-right">
+            <div class="tag_share">
+                <div class="post-meta__tag-list">
+                    
+                </div>
+            </div>
+        </div>
+
+        
+            <nav class="needEndHide pagination-post" id="pagination">
+    
+        <div class="prev-post pull-left">
+            <a href="/p/264620af.html">
+                <div class="pagination-info">
+                    <div class="label">上一篇</div>
+                    <div class="prev_info">普通人，如何把握AI时代</div>
+                </div>
+            </a>
+        </div>
+        <div class="next-post pull-right">
+            <a href="/p/725553c9.html">
+                <div class="pagination-info">
+                    <div class="label">下一篇</div>
+                    <div class="next_info">设计师的30岁-45岁的职业阶段管理方法，给职业焦虑期或者迷茫期设计师看</div>
+                </div>
+            </a>
+        </div>
+    
+</nav>
+        
+
+        
+
+        
+            <div id="post-comment" view-image>
+    <div class="comment-head">
+        <div class="comment-headline">
+            <i class="scoicon sco-chat-fill"></i>
+            <span> 评论</span>
+        </div>
+    </div>
+    <div class="comment-wrap">
+        <div id="comment"></div>
+        <script>
+    async function initComment(){
+        var initOptions = Object.assign(
+            {"envId":"https://twikoo.daxiang.work/","lang":"zh-CN","accessToken":null},
+            {
+                el: '#comment',
+                onCommentLoaded: function() {
+                    GLOBALCONFIG.lightbox && sco.lightbox('#article-container img, #twikoo .tk-content img:not(.tk-owo-emotion)')
+                },
+                lang: 'zh-CN',
+            }
+        )
+        await twikoo.init(initOptions)
+        
+            var countOptions = Object.assign(
+                {"envId":"https://twikoo.daxiang.work/","lang":"zh-CN","accessToken":null},
+                {
+                    urls: [window.location.pathname],
+                    includeReply: false
+                }
+            )
+            const res = await twikoo.getCommentsCount(countOptions)
+            try{
+                document.getElementById('twikoo-count').innerText = res[0].count
+            }catch (e) {
+                document.getElementById('twikoo-count').innerText = '加载错误'
+            }
+        
+    }
+</script>
+    </div>
+</div>
+        
+    </div>
+
+    <div class="aside-content" id="aside-content">
+    
+    
+        
+        <div class="card-widget card-info">
+    <div class="card-content">
+        <div class="card-info-avatar is-center">
+            <div class="author-info__top-group">
+                <div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">
+                    一日之计在于晨
+                </div>
+            </div>
+        </div>
+        <div class="avatar-img-group">
+            <img class="avatar-img" alt="avatar" src= "/img/loading.gif" data-lazy-src="https://vip.helloimg.com/images/2023/11/07/oc9OOK.png">
+            <div class="avatar-sticker">
+                <svg class="avatar-sticker-img"  alt="avatar" aria-hidden="true">
+                    <use xlink:href="#sco-smile"></use>
+                </svg>
+                
+<script src="https://cdn3.codesign.qq.com/icons/XgRxnjPG4VZLmqr/latest/iconfont.js"></script>
+
+            </div>
+        </div>
+        <div class="author-info__description_group">
+            <div class="author-info__description">分享自己对设计的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。</div>
+            <div class="author-info__description2">相信你可以在这里找到对你有用的知识和教程。</div>
+        </div>
+        <div class="author-info__bottom-group">
+            <a class="author-info__bottom-group-left" href="/about" data-pjax-state="">
+                <div class="author-info__name">
+                    Leo
+                </div>
+                <div class="author-info__desc">万事相宜，千般吉愿。</div>
+            </a>
+            <div class="card-info-social-icons is-center">
+                
+                    <a class="social-icon" target="_blank" rel="noopener" href="https://github.com/Armyh" title="Github">
+                        <i class="scoicon sco-github-line"></i>
+                    </a>
+                
+                    <a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/629229319" title="Bilibili">
+                        <i class="scoicon sco-bilibili-line"></i>
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+     
+    
+    <div class="sticky_layout">
+        
+            <div class="card-widget" id="card-toc">
+    <div class="item-headline">
+        <i class="scoicon sco-menu-line"></i>
+        <span>文章目录</span>
+    </div>
+    <div class="toc-content" id="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%90%84%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%8C%E7%9B%B8%E5%AF%B9%E6%88%90%E7%86%9F"><span class="toc-text">1、各种设计方法，相对成熟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E8%BE%93%E5%87%BA%E7%9A%84%E4%BB%B7%E5%80%BC%E5%BD%B1%E5%93%8D%E5%8A%9B%EF%BC%8C%E9%9A%BE%E4%BB%A5%E9%87%8F%E5%8C%96"><span class="toc-text">2、输出的价值影响力，难以量化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E7%BB%8F%E6%B5%8E%E4%B8%8B%E8%A1%8C%EF%BC%8C%E8%B6%8A%E6%9D%A5%E8%B6%8A%E5%8A%A1%E5%AE%9E"><span class="toc-text">3、经济下行，越来越务实</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E4%BA%BA%E5%8A%9B%E5%87%8F%E5%B0%91%EF%BC%8C%E9%99%8D%E6%9C%AC%E5%A2%9E%E6%95%88"><span class="toc-text">4、人力减少，降本增效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81%E6%B3%A8%E6%84%8F%E5%8A%9B%E8%A2%AB%E5%88%86%E6%95%A3"><span class="toc-text">5、注意力被分散</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li></ol>
+    </div>
+</div>
+            
+        
+            
+        <style>
+    #aside-content .card-widget.card-platform {
+        background: var(--sco-main);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 0;
+        cursor: pointer;
+        border: none;
+        height: 110px;
+        border: var(--style-border);
+        transition: 0.6s
+    }
+    #aside-content .card-widget.card-platform:before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: url("https://img.meuicat.com/blog/14.webp") center center no-repeat;
+        content: '';
+        background-size: cover
+    }
+    #aside-content .card-widget.card-platform:hover:before {
+        filter: blur(12px) saturate(1.5);
+        transition: .3s
+    }
+    #aside-content .card-widget #flip-wrapper {
+        perspective: 1000;
+        position: relative;
+        width: 235px;
+        height: 110px;
+        z-index: 1
+    }
+    #aside-content .card-platform #flip-wrapper:hover #flip-content {
+        transform: rotateY(180deg)
+    }
+    #aside-content .card-platform #flip-wrapper #flip-content {
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: cubic-bezier(0, 0, 0, 1.29) 0.3s
+    }
+    #aside-content .card-platform #flip-wrapper #flip-content .face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background: url("https://img.meuicat.com/blog/15.webp") center center no-repeat;
+        background-size: 100%
+    }
+    #aside-content .card-platform #flip-wrapper #flip-content .face.back {
+        display: block;
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        box-sizing: border-box;
+        background: url("https://pic6.58cdn.com.cn/nowater/webim/big/n_v288526ae5372a4ba697e3b10248032c9e.png") center center no-repeat;
+        background-size: 100%
+    }
+    [data-theme='dark'] #aside-content .card-widget.card-platform {
+        background: var(--sco-card-bg)
+    }
+</style>
+<div class="card-widget card-platform">
+    <div id="flip-wrapper">
+        <div id="flip-content">
+            <div class="face"></div>
+            <div class="back face"></div>
+        </div>
+    </div>
+</div>
+     
+        
+            
+        <div class="card-widget card-recent-post">
+    <div class="item-headline">
+        <i class="scoicon sco-map-line"></i>
+        <span>最近发布</span>
+    </div>
+    <div class="aside-list">
+        
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/p/583429ec.html" title="那些年用过的CSS奇妙用法之能用CSS就不用JS技巧系列">
+                    <img
+                        alt="那些年用过的CSS奇妙用法之能用CSS就不用JS技巧系列"
+                        src="https://img.daxiang.work/202312092325447.webp">
+                </a>
+                <div class="content">
+                    
+                    <a class="title" href="/p/583429ec.html" title="那些年用过的CSS奇妙用法之能用CSS就不用JS技巧系列">
+                        那些年用过的CSS奇妙用法之能用CSS就不用JS技巧系列
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/p/f90a7abd.html" title="保姆级教程！Stable Diffusion LoRA模型训练教程（新手篇）">
+                    <img
+                        alt="保姆级教程！Stable Diffusion LoRA模型训练教程（新手篇）"
+                        src="https://img.daxiang.work/202311232337250.jpg">
+                </a>
+                <div class="content">
+                    
+                        <a class="article-recent_post_categories" href="/p/f90a7abd.html">
+                            软件推荐
+                        </a>
+                    
+                    <a class="title" href="/p/f90a7abd.html" title="保姆级教程！Stable Diffusion LoRA模型训练教程（新手篇）">
+                        保姆级教程！Stable Diffusion LoRA模型训练教程（新手篇）
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/p/4c6bb829.html" title="10个免费CDN前端静态资源托管库">
+                    <img
+                        alt="10个免费CDN前端静态资源托管库"
+                        src="https://img.daxiang.work/202311232224812.jpg">
+                </a>
+                <div class="content">
+                    
+                        <a class="article-recent_post_categories" href="/p/4c6bb829.html">
+                            软件推荐
+                        </a>
+                    
+                    <a class="title" href="/p/4c6bb829.html" title="10个免费CDN前端静态资源托管库">
+                        10个免费CDN前端静态资源托管库
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/p/2be9c18.html" title="设计师如何破解迷茫？2024年给设计师的10个成长锦囊">
+                    <img
+                        alt="设计师如何破解迷茫？2024年给设计师的10个成长锦囊"
+                        src="https://img.daxiang.work/202311232153386.jpg">
+                </a>
+                <div class="content">
+                    
+                        <a class="article-recent_post_categories" href="/p/2be9c18.html">
+                            闲聊杂谈
+                        </a>
+                    
+                    <a class="title" href="/p/2be9c18.html" title="设计师如何破解迷茫？2024年给设计师的10个成长锦囊">
+                        设计师如何破解迷茫？2024年给设计师的10个成长锦囊
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/p/f9b36ec6.html" title="刚入行设计师，如何快速成长？">
+                    <img
+                        alt="刚入行设计师，如何快速成长？"
+                        src="https://img.daxiang.work/202311232141939.jpg">
+                </a>
+                <div class="content">
+                    
+                        <a class="article-recent_post_categories" href="/p/f9b36ec6.html">
+                            闲聊杂谈
+                        </a>
+                    
+                    <a class="title" href="/p/f9b36ec6.html" title="刚入行设计师，如何快速成长？">
+                        刚入行设计师，如何快速成长？
+                    </a>
+                </div>
+            </div>
+            
+    </div>
+</div>
+     
+        
+            
+        <div class="card-widget card-tags card-archives card-webinfo card-allinfo">
+    <div class="card-tag-cloud">
+    
+        <a href="/tags/Markdown/" style="font-size: 0.8rem; color: #d3d3d3">Markdown<sup>1</sup></a>
+    
+        <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 0.8rem; color: #d3d3d3">教程<sup>2</sup></a>
+    
+        <a href="/tags/Stable-Diffusion/" style="font-size: 0.8rem; color: #d3d3d3">Stable Diffusion<sup>1</sup></a>
+    
+        <a href="/tags/LoRA/" style="font-size: 0.8rem; color: #d3d3d3">LoRA<sup>1</sup></a>
+    
+        <a href="/tags/%E5%BF%85%E7%9C%8B/" style="font-size: 0.8rem; color: #d3d3d3">必看<sup>3</sup></a>
+    
+        <a href="/tags/CDN/" style="font-size: 0.8rem; color: #d3d3d3">CDN<sup>1</sup></a>
+    
+        <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 0.8rem; color: #d3d3d3">前端开发<sup>1</sup></a>
+    
+        <a href="/tags/AI%E7%BB%98%E7%94%BB/" style="font-size: 0.8rem; color: #d3d3d3">AI绘画<sup>3</sup></a>
+    
+        <a href="/tags/%E7%83%AD%E9%97%A8/" style="font-size: 0.8rem; color: #d3d3d3">热门<sup>3</sup></a>
+    
+        <a href="/tags/Photoshop/" style="font-size: 0.8rem; color: #d3d3d3">Photoshop<sup>1</sup></a>
+    
+</div>
+    <ul class="card-archive-list">
+    
+    
+        <li class="card-archive-list-item"><a class="card-archive-list-link" onclick="pjax.loadUrl('/archives/2023/')" data-pjax-state=""><span
+            class="card-archive-list-date">2023</span>
+            <div class="card-archive-list-count-group"><span class="card-archive-list-count">14</span><span
+                    class="card-archive-list-count-unit">篇</span></div>
+            </a>
+        </li>
+        
+</ul>
+
+    <hr>
+    <div class="webinfo">
+    
+    
+        
+        
+    
+    
+        <div class="webinfo-item">
+            <div class="webinfo-item-title">
+                <i class="item-icon scoicon sco-calendar-todo-fill"></i>
+                <div class="item-name">建站天数 :</div>
+            </div>
+            <div class="item-count" id="runtimeshow">
+            </div>
+        </div>
+    
+    
+    
+</div>
+</div>
+     
+        
+    </div>
+</div>
+
+    
+</main>
+        <footer id="footer">
+            <div id="sco-footer-bar">
+    <div class="footer-logo">
+        
+            <i style="background-image: url('https://vip.helloimg.com/images/2023/11/10/odlvE5.png')"></i>
+        
+    </div>
+    <div class="footer-bar-description">来自 大象研习社 最新设计与科技的文章</div>
+    <a class="footer-bar-link" href="/" data-pjax-state="">了解更多</a>
+</div>
+<div id="footer_deal">
+    
+        <a class="deal_link" target="_blank" href="https://github.com/Armyh" rel="external nofollow noopener"
+           title="Github">
+            <i class="scoicon sco-github-line"></i>
+        </a>
+    
+        <a class="deal_link" href="mailto:daxiangyanxishe@163.com" rel="external nofollow"
+           title="Mail">
+            <i class="scoicon sco-mail-line"></i>
+        </a>
+    
+    <img class="footer_mini_logo" src= "/img/loading.gif" data-lazy-src="https://vip.helloimg.com/images/2023/11/09/od4KS5.png"
+         title="返回顶部" onclick="sco.toTop()">
+    
+        <a class="deal_link" target="_blank" href="https://space.bilibili.com/629229319" rel="external nofollow noopener"
+           title="Bilibili">
+            <i class="scoicon sco-bilibili-line"></i>
+        </a>
+    
+        <a class="deal_link" href="https://" rel="external nofollow"
+           title="抖音">
+            <i class="scoicon sco-douyin-fill"></i>
+        </a>
+    
+</div>
+<div id="sco-footer">
+    
+    
+</div>
+<div id="footer-bar">
+    <div class="footer-bar-links">
+        <div class="footer-bar-left">
+            <div id="footer-bar-tips">
+                
+                    <div class="copyright">© 2023
+                        By
+                        <a class="footer-bar-link" href="/" rel="external nofollow">Leo</a>
+                    </div>
+                
+            </div>
+        </div>
+        <div class="footer-bar-right">
+            
+                <a class="footer-bar-link" href="/rss/" rel="external nofollow"
+                   target="_self">订阅</a>
+            
+            <a class="footer-bar-link" href="https://github.com/DuoSco/hexo-theme-solitude" rel="external nofollow"
+               target="_self">主题</a>
+            
+            <a class="footer-bar-link cc" href="/copyright/" target="_self" rel="external nofollow">
+                <i class="scoicon sco-copyright-line"></i>
+                <i class="scoicon sco-creative-commons-by-line"></i>
+                <i class="scoicon sco-creative-commons-nc-line"></i>
+                <i class="scoicon sco-creative-commons-nd-line"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="needEndHide" id="cookies-window">
+    <div class="cookies-window-title">协议提醒助手</div>
+    <div class="cookies-window-content">
+        <span class="cookies-tip">查看本站为你的个人隐私做出的努力</span>
+        <a class="cookies-link" href="/privacy/" title="本站如何保护你的隐私" data-pjax-state="">
+            <i class="scoicon sco-arrow-right-circle-fill"></i>
+        </a>
+    </div>
+</div>
+
+
+    <div class="comment-barrage">
+    </div>
+
+        </footer>
+    </div>
+
+<div>
+    
+
+<script src="https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js"></script>
+
+
+    
+<script src="/lib/lazyload.min.js"></script>
+
+
+
+<script src="/lib/snackbar.min.js"></script>
+
+
+    
+<script src="/lib/view-image.min.js"></script>
+
+
+
+    
+<script src="https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.js"></script>
+
+
+
+<script src="/js/utils.js"></script>
+
+<div id="js-pjax">
+    <div id="rightMenu">
+    <div class="rightMenu-group rightMenu-small">
+        <div class="rightMenu-item" id="menu-backward">
+            <i class="scoicon sco-arrow-left-line"></i>
+        </div>
+        <div class="rightMenu-item" id="menu-forward">
+            <i class="scoicon sco-arrow-right-line"></i>
+        </div>
+        <div class="rightMenu-item" id="menu-refresh">
+            <i class="scoicon sco-restart-line" style="font-size: 19px;"></i>
+        </div>
+        <div class="rightMenu-item" id="menu-top">
+            <i class="scoicon sco-arrow-up-line"></i>
+        </div>
+    </div>
+    <div class="rightMenu-group rightMenu-line rightMenuPlugin">
+        <div class="rightMenu-item" id="menu-copytext">
+            <i class="scoicon sco-copy-fill"></i>
+            <span>复制选中文本</span>
+        </div>
+        <div class="rightMenu-item" id="menu-pastetext">
+            <i class="scoicon sco-clipboard-fill"></i>
+            <span>粘贴文本</span>
+        </div>
+        <a class="rightMenu-item" id="menu-commenttext" data-pjax-state="">
+            <i class="scoicon sco-chat-new-fill"></i>
+            <span>引用到评论</span>
+        </a>
+        <div class="rightMenu-item" id="menu-newwindow">
+            <i class="scoicon sco-window-fill"></i>
+            <span>新窗口打开</span>
+        </div>
+        <div class="rightMenu-item" id="menu-copylink">
+            <i class="scoicon sco-link-line"></i>
+            <span>复制链接地址</span>
+        </div>
+        <div class="rightMenu-item" id="menu-copyimg">
+            <i class="scoicon sco-copy-fill"></i>
+            <span>复制此图片</span>
+        </div>
+        <div class="rightMenu-item" id="menu-downloadimg">
+            <i class="scoicon sco-download-cloud-fill"></i>
+            <span>下载此图片</span>
+        </div>
+        <div class="rightMenu-item" id="menu-search">
+            <i class="scoicon sco-search-line"></i>
+            <span>站内搜索</span>
+        </div>
+        <div class="rightMenu-item" id="menu-searchBaidu">
+            <i class="scoicon sco-baidu-fill"></i>
+            <span>百度搜索</span>
+        </div>
+        <div class="rightMenu-item" id="menu-music-toggle">
+            <i class="scoicon sco-play-fill"></i>
+            <span>播放音乐</span>
+        </div>
+        <div class="rightMenu-item" id="menu-music-back">
+            <i class="scoicon sco-skip-back-fill"></i>
+            <span>切换到上一首</span>
+        </div>
+        <div class="rightMenu-item" id="menu-music-forward">
+            <i class="scoicon sco-skip-forward-fill"></i>
+            <span>切换到下一首</span>
+        </div>
+        <div class="rightMenu-item" id="menu-music-playlist"
+             onclick="window.open('https://y.qq.com/n/ryqq/playlist/8651639768', '_blank');">
+            <i class="scoicon sco-play-list-2-line"></i>
+            <span>查看所有歌曲</span></div>
+        <div class="rightMenu-item" id="menu-music-copyMusicName">
+            <i class="scoicon sco-copy-fill"></i>
+            <span>复制歌名</span>
+        </div>
+    </div>
+    <div class="rightMenu-group rightMenu-line rightMenuOther">
+        <a class="rightMenu-item menu-Link" id="menu-randomPost" data-pjax-state="">
+            <i class="scoicon sco-signal-tower-fill"></i>
+            <span>随便逛逛</span></a>
+        <a class="rightMenu-item menu-link" href="/categories/" data-pjax-state="">
+            <i class="scoicon sco-checkbox-multiple-blank-fill"></i>
+            <span>博客分类</span></a>
+        <a class="rightMenu-item menu-link" href="/tags/" data-pjax-state="">
+            <i class="scoicon sco-price-tag-fill"></i>
+            <span>文章标签</span></a>
+    </div>
+    <div class="rightMenu-group rightMenu-line rightMenuOther">
+        <div class="rightMenu-item" id="menu-copy">
+            <i class="scoicon sco-external-link-fill"></i>
+            <span>复制地址</span>
+        </div>
+        <div class="rightMenu-item" id="menu-commentBarrage">
+            <i class="scoicon sco-chat-fill"></i>
+            <span class="menu-commentBarrage-text">关闭热评</span>
+        </div>
+        <div class="rightMenu-item" id="menu-darkmode">
+            <i class="scoicon sco-moon-clear-fill"></i>
+            <span class="menu-darkmode-text">浅色模式</span>
+        </div>
+    </div>
+</div>
+<div id="rightmenu-mask"></div>
+    
+    
+</div>
+
+<script src="/js/main.js"></script>
+
+
+    
+<script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+    
+<script src="https://cdn.bootcdn.net/ajax/libs/meting/2.0.1/Meting.min.js"></script>
+
+    <script>
+        var meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+    </script>
+
+
+    
+<script src="/js/extend/covercolor/local.js"></script>
+
+
+
+
+
+
+    
+<script src="/js/extend/console/comment.js"></script>
+
+
+
+<script src="/js/rightmenu.js"></script>
+
+
+
+    <script data-pjax src="/js/commentBarrage.js"></script>
+
+
+
+
+
+
+
+    
+<script src="/js/txmap.js"></script>
+
+
+    <script>
+  let pjaxSelectors = [
+    'title',
+    '#body-wrap',
+    '#site-config',
+    'meta[name="description"]',
+    '#js-pjax'
+  ]
+
+  const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+  })
+
+  document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+</script>
+    
+</div>
+
+     
+<div class="needEndHide" id="nav-music" onclick="sco.musicToggle()">
+    <div id="nav-music-hoverTips">音乐已暂停</div>
+    <meting-js id="8651639768" server="tencent" type="playlist" mutex="true"
+        preload="none" data-lrctype="0" order="random" theme="var(--sco-main)"></meting-js>
+</div>
+
+</body>
+</html><script>const posts=["p/583429ec.html","p/f90a7abd.html","p/4c6bb829.html","p/2be9c18.html","p/f9b36ec6.html","p/9f3311bd.html","p/264620af.html","p/918081bf.html","p/725553c9.html","p/9d897d76.html","p/b174e4d0.html","p/e42fc4c8.html","p/50b666d3.html","p/c079e252.html"];function toRandomPost(){ pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]); };</script>

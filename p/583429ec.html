@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>那些年用过的CSS奇妙用法之能用CSS就不用JS技巧系列 | 大象研习社</title>
+<noscript>开启Javascript是必要的</noscript>
+<link rel="icon" type="image/x-icon" href="https://vip.helloimg.com/images/2023/11/09/od4KS5.png">
+<meta name="description" content="一个平凡但不拘于世的不羁青年">
+
+    <meta name="apple-mobile-web-app-title" content="大象研习社">
+    <link rel="bookmark" href="https://vip.helloimg.com/images/2023/11/09/od4KS5.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://vip.helloimg.com/images/2023/11/09/od4KS5.png">
+
+<link rel="stylesheet" href="/css/var.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+    <script data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}" src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn3.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css">
+
+
+<link rel="stylesheet" href="/lib/snackbar.min.css">
+
+
+    
+<link rel="stylesheet" href="/css/commentBarrage.css">
+
+    
+<script src="https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.20/twikoo.all.min.js"></script>
+
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+
+
+
+    
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.css">
+
+
+<script>
+    (win=> {
+            win.saveToLocal = {
+                set: function setWithExpiry(key, value, ttl) {
+                    if (ttl === 0)
+                        return
+                    const now = new Date()
+                    const expiryDay = ttl * 86400000
+                    const item = {
+                        value: value,
+                        expiry: now.getTime() + expiryDay,
+                    }
+                    localStorage.setItem(key, JSON.stringify(item))
+                },
+
+                get: function getWithExpiry(key) {
+                    const itemStr = localStorage.getItem(key)
+
+                    if (!itemStr) {
+                        return undefined
+                    }
+                    const item = JSON.parse(itemStr)
+                    const now = new Date()
+
+                    if (now.getTime() > item.expiry) {
+                        localStorage.removeItem(key)
+                        return undefined
+                    }
+                    return item.value
+                }
+            }
+
+            const DarkModeStatus = localStorage.getItem('theme')
+            if(DarkModeStatus !== null){
+                if(DarkModeStatus === 'dark'){
+                    document.documentElement.setAttribute('data-theme', 'dark')
+                }else{
+                    document.documentElement.setAttribute('data-theme', 'light')
+                }
+            }
+
+            const asideStatus = saveToLocal.get('aside-status')
+            if (asideStatus !== undefined) {
+                if (asideStatus === 'hide') {
+                    document.documentElement.classList.add('hide-aside')
+                } else {
+                    document.documentElement.classList.remove('hide-aside')
+                }
+            }
+        }
+    )(window)
+
+    console.log("%c🔥 程序：Hexo | 主题：Hexo-Theme-Solitude | 作者：DuoSco团队 | 官网：https://github.com/DuoSco/Hexo-theme-solitude 😋", "color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
+</script>
+
+
+<script>var GLOBALCONFIG = {"root":"/","runtime":"2023-11-09 00:00:00","lazyload":{"enable":true,"error":"/img/error_load.png"},"hightlight":{"enable":true,"limit":200},"lightbox":true,"randomlinks":false,"lang":{"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"recent":"最近","yesterday":"昨天","berforeyesterday":"前天","daybefore":"天前","runtime":"天"},"sayhello":{"morning":"早上好","noon":"中午好","afternoon":"下午好","night":"晚上好","goodnight":"晚安","iam":"!  我是"},"search":{"empty":"搜索结果为空","hit":"已为您找到 ${query} 条结果","placeholder":"输入关键词快速查找"}},"covercolor":true,"comment":{"enable":true,"twikooUrl":"https://twikoo.daxiang.work/","twikooAccessToken":null}};</script><script id="site-config">var PAGECONFIG = {"is_home":false,"is_post":true,"is_page":false,"page":false,"toc":true,"comment":true};</script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body id="body">
+
+    <div id="loading-box" onclick="preloader.endLoading();" class style="zoom: 1;">
+    <div class="loading-bg">
+        <img class="loading-img nolazyload" alt="loading image"
+            src="https://vip.helloimg.com/images/2023/11/09/od4KS5.png">
+        </div>
+</div>
+<script>
+    const preloader = {
+        endLoading: () => {
+            document.getElementById('loading-box').classList.add("loaded")
+        },
+        initLoading: () => {
+            document.getElementById('loading-box').classList.remove("loaded")
+        },
+        removePaceDone: () => {
+            document.getElementById('body').classList = 'pace-done'
+        }
+    }
+    window.addEventListener('load',()=> { preloader.endLoading() })
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+</script>
+<style>
+    #loading-box {
+        -webkit-user-select: none;
+    }
+
+    #loading-box .loading-bg {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: var(--sco-background);
+        z-index: 1999;
+        opacity: 1;
+        transition: 0.2s;
+        pointer-events: all;
+        animation: showLoading 0.3s 0s backwards;
+    }
+
+    #loading-box.loaded .loading-bg {
+        pointer-events: none;
+        transition: 0.2s;
+        animation: hideLoading 0.3s 0s forwards;
+    }
+
+    #loading-box .loading-img {
+        width: 100px;
+        margin: auto;
+        animation-duration: 0.2s;
+        animation-name: loadingAction;
+        border-radius: 50px;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes loadingAction {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0.6;
+        }
+    }
+
+    @keyframes hideLoading {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes showLoading {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+<div id="console" style="zoom: 1;" class="">
+    <div class="close-btn" onclick="sco.hideConsole()" href="javascript:void(0);">
+        <i class="scoicon sco-close-fill"></i>
+    </div>
+    
+        <div class="console-card-group">
+            <div class="console-card-group-left">
+                <div class="console-card" id="card-newest-comments" onclick="sco.hideConsole()">
+                    <div class="card-content">
+                        <div class="author-content-item-tips">互动</div>
+                        <div class="author-content-item-title">最新评论</div>
+                    </div>
+                    <div class="aside-list"></div>
+                </div>
+
+            </div>
+            <div class="console-card-group-right">
+                <div class="console-card tags" onclick="sco.hideConsole()">
+                    <div class="card-content">
+                        <div class="author-content-item-tips">标签</div>
+                        <div class="author-content-item-title">寻找感兴趣的领域</div>
+                    </div>
+                    <div class="card-tag-cloud">
+                        
+                            <a href="/tags/Markdown/"
+                               style="font-size: 0.8rem; color: #d3d3d3">Markdown
+                                <sup>1</sup></a>
+                        
+                            <a href="/tags/%E6%95%99%E7%A8%8B/"
+                               style="font-size: 0.8rem; color: #d3d3d3">教程
+                                <sup>2</sup></a>
+                        
+                            <a href="/tags/Stable-Diffusion/"
+                               style="font-size: 0.8rem; color: #d3d3d3">Stable Diffusion
+                                <sup>1</sup></a>
+                        
+                            <a href="/tags/LoRA/"
+                               style="font-size: 0.8rem; color: #d3d3d3">LoRA
+                                <sup>1</sup></a>
+                        
+                            <a href="/tags/%E5%BF%85%E7%9C%8B/"
+                               style="font-size: 0.8rem; color: #d3d3d3">必看
+                                <sup>3</sup></a>
+                        
+                            <a href="/tags/CDN/"
+                               style="font-size: 0.8rem; color: #d3d3d3">CDN
+                                <sup>1</sup></a>
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"
+                               style="font-size: 0.8rem; color: #d3d3d3">前端开发
+                                <sup>1</sup></a>
+                        
+                            <a href="/tags/AI%E7%BB%98%E7%94%BB/"
+                               style="font-size: 0.8rem; color: #d3d3d3">AI绘画
+                                <sup>3</sup></a>
+                        
+                            <a href="/tags/%E7%83%AD%E9%97%A8/"
+                               style="font-size: 0.8rem; color: #d3d3d3">热门
+                                <sup>3</sup></a>
+                        
+                            <a href="/tags/Photoshop/"
+                               style="font-size: 0.8rem; color: #d3d3d3">Photoshop
+                                <sup>1</sup></a>
+                        
+                    </div>
+                </div>
+                <div class="console-card history" onclick="sco.hideConsole()">
+                    <ul class="card-archive-list">
+    
+    
+        <li class="card-archive-list-item"><a class="card-archive-list-link" onclick="pjax.loadUrl('/archives/2023/11/')" data-pjax-state=""><span
+            class="card-archive-list-date">2023/11</span>
+            <div class="card-archive-list-count-group"><span class="card-archive-list-count">14</span><span
+                    class="card-archive-list-count-unit">篇</span></div>
+            </a>
+        </li>
+        
+</ul>
+
+                </div>
+            </div>
+        </div>
+    
+
+    <div class="button-group">
+        <div class="console-btn-item">
+            <a class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="显示模式切换"
+               href="javascript:void(0);" rel="external nofollow" data-pjax-state="">
+                <i class="scoicon sco-moon-clear-fill" style="font-size: 1rem;"></i>
+            </a>
+        </div>
+        <div class="console-btn-item" id="consoleHideAside">
+            <a class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"
+               href="javascript:void(0);" rel="external nofollow" data-pjax-state="">
+                <i class="scoicon sco-side-bar-fill" style="font-size: 1rem;"></i>
+            </a>
+        </div>
+        
+            <div class="console-btn-item" id="consoleMusic" onclick="sco.musicToggle()" title="音乐开关">
+                <a class="music-switch">
+                    <i class="scoicon sco-disc-fill"></i>
+                </a>
+            </div>
+        
+        
+            <div class="console-btn-item on" id="consoleCommentBarrage" onclick="sco.switchCommentBarrage()"
+                 title="热评开关">
+                <a class="commentBarrage">
+                    <i class="scoicon sco-chat-fill"></i>
+                </a>
+            </div>
+        
+    </div>
+    <div class="console-mask" onclick="sco.hideConsole()" href="javascript:void(0);" rel="external nofollow"></div>
+</div>
+<div id="sidebar" style="zoom: 1;">
+    <div id="menu-mask" style="display: none;"></div>
+    <div id="sidebar-menus" class>
+        <span class="sidebar-menu-item-title">功能</span>
+        <div class="sidebar-menu-item">
+            <a class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()" title="显示模式切换"
+               href="javascript:void(0);" rel="external nofollow">
+                <i class="scoicon sco-moon-clear-fill" style="font-size: 1rem;"></i>
+                <span>显示模式</span>
+            </a>
+        </div>
+        
+        <div class="menus_items">
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 文库</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/archives/">
+                                <i class="scoicon sco-folder-fill"></i>
+                                <span> 文章列表</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/categories/">
+                                <i class="scoicon sco-checkbox-multiple-blank-fill"></i>
+                                <span> 全部分类</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/tags/">
+                                <i class="scoicon sco-price-tag-fill"></i>
+                                <span> 全部标签</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 专栏</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/">
+                                <i class=""></i>
+                                <span> 设计分享</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/">
+                                <i class=""></i>
+                                <span> 设计工具</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 友链</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/links/">
+                                <i class="scoicon sco-group-fill"></i>
+                                <span> 友情链接</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 我的</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/tlink/">
+                                <i class="scoicon sco-tools-fill"></i>
+                                <span> 工具箱</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/about/">
+                                <i class="scoicon sco-contacts-fill"></i>
+                                <span> 关于本站</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+</div>
+        <span class="sidebar-menu-item-title">标签</span>
+        <div class="card-widget card-tags card-archives card-webinfo card-allinfo">
+            <div class="item-headline">
+                <i class="scoicon sco-price-tag-fill"></i>
+                <span>标签</span>
+            </div>
+            <div class="card-tag-cloud">
+                
+                    <a href="/tags/Markdown/" style="font-size: 1em; color: #d3d3d3">Markdown
+                        <sup>1</sup>
+                    </a>
+                
+                    <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1em; color: #d3d3d3">教程
+                        <sup>2</sup>
+                    </a>
+                
+                    <a href="/tags/Stable-Diffusion/" style="font-size: 1em; color: #d3d3d3">Stable Diffusion
+                        <sup>1</sup>
+                    </a>
+                
+                    <a href="/tags/LoRA/" style="font-size: 1em; color: #d3d3d3">LoRA
+                        <sup>1</sup>
+                    </a>
+                
+                    <a href="/tags/%E5%BF%85%E7%9C%8B/" style="font-size: 1em; color: #d3d3d3">必看
+                        <sup>3</sup>
+                    </a>
+                
+                    <a href="/tags/CDN/" style="font-size: 1em; color: #d3d3d3">CDN
+                        <sup>1</sup>
+                    </a>
+                
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 1em; color: #d3d3d3">前端开发
+                        <sup>1</sup>
+                    </a>
+                
+                    <a href="/tags/AI%E7%BB%98%E7%94%BB/" style="font-size: 1em; color: #d3d3d3">AI绘画
+                        <sup>3</sup>
+                    </a>
+                
+                    <a href="/tags/%E7%83%AD%E9%97%A8/" style="font-size: 1em; color: #d3d3d3">热门
+                        <sup>3</sup>
+                    </a>
+                
+                    <a href="/tags/Photoshop/" style="font-size: 1em; color: #d3d3d3">Photoshop
+                        <sup>1</sup>
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+</div>    
+
+
+    <div class="post" id="body-wrap">
+        <header class="post-bg" id="page-header">
+    <nav id="nav" class="show">
+    <div id="nav-group">
+        <div id="blog_name">
+            
+            <a id="site-name" href="/" title="返回博客主页" target="_self">
+                    
+                        <img src= "/img/loading.gif" data-lazy-src="https://vip.helloimg.com/images/2023/11/10/odlvE5.png"></img>
+                      
+            </a>
+        </div>
+        <div id="page-name-mask">
+            <div id="page-name">
+                <a id="page-name-text" onclick="sco.toTop()">那些年用过的CSS奇妙用法之能用CSS就不用JS技巧系列</a>
+            </div>
+        </div>
+        <div id="menus">
+            <div class="menus_items">
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 文库</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/archives/">
+                                <i class="scoicon sco-folder-fill"></i>
+                                <span> 文章列表</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/categories/">
+                                <i class="scoicon sco-checkbox-multiple-blank-fill"></i>
+                                <span> 全部分类</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/tags/">
+                                <i class="scoicon sco-price-tag-fill"></i>
+                                <span> 全部标签</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 专栏</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/">
+                                <i class=""></i>
+                                <span> 设计分享</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/">
+                                <i class=""></i>
+                                <span> 设计工具</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 友链</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/links/">
+                                <i class="scoicon sco-group-fill"></i>
+                                <span> 友情链接</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+        <div class="menus_item">
+            
+                <a class="site-page" href="javascript:void(0);" rel="external nofollow">
+                    <span> 我的</span>
+                </a>
+                <ul class="menus_item_child">
+                    
+                        <li>
+                            <a class="site-page child" href="/tlink/">
+                                <i class="scoicon sco-tools-fill"></i>
+                                <span> 工具箱</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a class="site-page child" href="/about/">
+                                <i class="scoicon sco-contacts-fill"></i>
+                                <span> 关于本站</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+             
+        </div>
+    
+</div>
+        </div>
+        <div id="nav-left">
+        </div>
+        <div id="nav-right">
+            
+    <div class="nav-button only-home" id="travellings_button">
+        <a class="site-page"  target="_blank" rel="noopener external nofollow" href="https://www.travellings.cn/go.html" title="开往-友链接力"  width="120">
+            <i class="scoicon sco-train-line" style="font-size: 1rem;"></i>
+        </a>
+    </div>
+
+
+    <div class="nav-button" id="randomPost_button">
+        <a class="site-page" onclick="toRandomPost()"
+            title="随机前往一个文章">
+            <i class="scoicon sco-signal-tower-fill" style="font-size: 1rem;"></i>
+        </a>
+    </div>
+
+
+
+    <div class="nav-button" id="nav-console">
+        <a class="console_switchbutton" onclick="sco.showConsole()"
+        title="显示中控台" href="javascript:void(0);" rel="external nofollow">
+        <i class="scoicon sco-dashboard-fill" style="font-size: 1rem;"></i>
+        </a>
+    </div>
+
+<div class="nav-button" id="nav-totop" onclick="sco.toTop()">
+    <a class="totopbtn">
+        <i class="scoicon sco-arrow-up-line"></i>
+        <span id="percent">0</span>
+    </a>
+</div>
+<div id="toggle-menu">
+    <a class="site-page">
+        <i class="scoicon sco-menu-line" style="font-size: 1rem;"></i>
+    </a>
+</div>
+        </div>
+    </div>
+</nav>
+    
+        <div class="coverdiv" id="coverdiv">
+    <img id="post-cover" class="nolazyload" src="https://img.daxiang.work/202312092325447.webp" alt="cover">
+</div>
+<div id="post-info">
+    <div id="post-firstinfo">
+        <div class="meta-firstline">
+            <a class="post-meta-original" title="该文章为原创文章，注意版权协议">
+                原创
+            </a>
+            
+            <div class="tag_share">
+                <div class="post-meta__tag-list">
+                    
+                        <a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">
+                            <span class="tags-punctuation"></span>
+                            <span class="tags-name">前端开发</span>
+                        </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="post-title">那些年用过的CSS奇妙用法之能用CSS就不用JS技巧系列</h1>
+    <div id="post-meta">
+        <div class="meta-secondline">
+            
+                <span class="post-meta-date" title="发布于">
+                <i class="post-meta-icon scoicon sco-calendar-todo-fill"></i>
+                <time datetime="2023-11-21T00:00:00+08:00"></time>
+            </span>
+            
+            
+                <span class="post-meta-date" title="更新于">
+                    <i class="post-meta-icon scoicon sco-refresh-line"></i>
+                    <time datetime="2023-12-10T00:32:43+08:00"></time>
+                </span>
+            
+            
+                <span class="post-meta-position" title="作者IP归属地为中国">
+                    <i class="post-meta-icon scoicon sco-map-pin-fill"></i>
+                    <span>中国</span>
+                </span>
+            
+            
+                
+                    <span class="post-meta-wordcount">
+                        <i class="scoicon sco-word-fill post-meta-icon" title="文章字数"></i>
+                        <span class="word-count">2.8k</span>
+                    </span>
+                
+                
+                    <span class="post-meta-time">
+                        <i class="scoicon sco-clock-fill post-meta-icon" title="阅读耗时"></i>
+                        <span>12 min</span>
+                    </span>
+                
+            
+            
+                <span class="post-meta-pv" title="文章热度">
+                    <i class="scoicon sco-fire-fill post-meta-icon"></i>
+                    
+                        <span id="twikoo_visitors"><i class="scoicon sco-loading-line"></i></span>
+                    
+                </span>
+            
+            
+                <span class="post-meta-commentcount" title="评论数">
+                    <i class="scoicon sco-chat-fill"></i>
+                    <a href="#post-comment">
+                        <span id="twikoo-count"><i class="scoicon sco-loading-line"></i></span>
+                    </a>
+                </span>
+            
+        </div>
+    </div>
+</div>
+<section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg"
+    xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+        <path id="gentle-wave"
+            d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path>
+    </defs>
+    <g class="parallax">
+        <use href="#gentle-wave" x="48" y="0"></use>
+        <use href="#gentle-wave" x="48" y="3"></use>
+        <use href="#gentle-wave" x="48" y="5"></use>
+        <use href="#gentle-wave" x="48" y="7"></use>
+    </g>
+</svg>
+</section>
+        
+</header>
+        <main class="layout" id="content-inner">
+    <div id="post">
+        <article class="post-content" id="article-container">
+            <h3 id="嵌套的圆角">嵌套的圆角</h3>
+<p>在遇到内外两层圆角时，可以通过 CSS 变量动态去计算内部的圆角，看起来会更加和谐</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312092326750.gif" alt=""></p>
+<p><code>核心代码</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;  </span><br><span class="line">  <span class="attr">--anzhiyu-nested-radius</span>: <span class="built_in">calc</span>(<span class="built_in">var</span>(--radius) - <span class="built_in">var</span>(--padding));  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="selector-class">.nested</span> &#123;  </span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="built_in">var</span>(--anzhiyu-nested-radius);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://1024code.com/~anzhiyu/fu2ltht">《css嵌套的圆角》在线运行1024code</a></p>
+<hr>
+<h2 id="视图转换动画-View-Transitions-API">视图转换动画 View Transitions API</h2>
+<p>我们先从一个简单的例子来认识一下。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;list&quot;</span> <span class="attr">id</span>=<span class="string">&quot;list&quot;</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>6<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>7<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>8<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>9<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>10<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我们实现一个简单交互，点击每个元素，元素就会被删除</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params">ev</span>)&#123;  </span><br><span class="line">  <span class="keyword">if</span> (ev.<span class="property">target</span>.<span class="property">className</span> === <span class="string">&#x27;item&#x27;</span>) &#123;  </span><br><span class="line">    ev.<span class="property">target</span>.<span class="title function_">remove</span>()  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>用 css修饰一下就变成了以下效果<br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312092326688.gif" alt=""><br>
+功能正常，就是有点太过生硬了</p>
+<p>现在轮到 <code>View Transitions</code> 出场了！我们只需要在改变状态的地方添加<code>document.startViewTransition</code>，如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params">ev</span>)&#123;  </span><br><span class="line">  <span class="keyword">if</span> (ev.<span class="property">target</span>.<span class="property">className</span> === <span class="string">&#x27;item&#x27;</span>) &#123;  </span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">startViewTransition</span>(<span class="function">() =&gt;</span> &#123; <span class="comment">// 开始视图变换  </span></span><br><span class="line">      ev.<span class="property">target</span>.<span class="title function_">remove</span>()  </span><br><span class="line">    &#125;);  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">list.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params">ev</span>)&#123;  </span><br><span class="line">  <span class="keyword">if</span> (<span class="variable language_">document</span>.<span class="property">startViewTransition</span>) &#123; <span class="comment">// 如果支持就视图变换  </span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">startViewTransition</span>(<span class="function">() =&gt;</span> &#123; <span class="comment">// 开始视图变换  </span></span><br><span class="line">      ev.<span class="property">target</span>.<span class="title function_">remove</span>()  </span><br><span class="line">    &#125;);  </span><br><span class="line">  &#125; <span class="keyword">else</span> &#123; <span class="comment">// 不支持就执行原来的逻辑  </span></span><br><span class="line">    ev.<span class="property">target</span>.<span class="title function_">remove</span>()  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>现在效果如下<br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312092326217.gif" alt=""><br>
+删除前后现在有一个淡入淡出的效果了，也就是默认的动画效果，我们可以把这个动画时长设置大一点，如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">::view-transition-<span class="title function_">old</span>(root), <span class="comment">/* 旧视图*/</span>  </span><br><span class="line">::view-transition-<span class="title function_">new</span>(<span class="params">root</span>) &#123; <span class="comment">/* 新视图*/</span>  </span><br><span class="line">  animation-<span class="attr">duration</span>: 2s;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这两个伪元素我们后面再做介绍，先看效果<br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312092326516.gif" alt="">是不是明显感觉过渡变慢了许多？</p>
+<p>但是这种动画还是不够舒服，是一种整体的变化，看不出删除前后元素的位置变化。</p>
+<p>接下来我们给每个元素指定一个标识，用来标记变化前后的状态，为了方便控制，可以借助 CSS 变量</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;list&quot;</span> <span class="attr">id</span>=<span class="string">&quot;list&quot;</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span> <span class="attr">style</span>=<span class="string">&quot;--i: a1&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span> <span class="attr">style</span>=<span class="string">&quot;--i: a2&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span> <span class="attr">style</span>=<span class="string">&quot;--i: a3&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span> <span class="attr">style</span>=<span class="string">&quot;--i: a4&quot;</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span> <span class="attr">style</span>=<span class="string">&quot;--i: a5&quot;</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span> <span class="attr">style</span>=<span class="string">&quot;--i: a6&quot;</span>&gt;</span>6<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span> <span class="attr">style</span>=<span class="string">&quot;--i: a7&quot;</span>&gt;</span>7<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span> <span class="attr">style</span>=<span class="string">&quot;--i: a8&quot;</span>&gt;</span>8<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span> <span class="attr">style</span>=<span class="string">&quot;--i: a9&quot;</span>&gt;</span>9<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span> <span class="attr">style</span>=<span class="string">&quot;--i: a10&quot;</span>&gt;</span>10<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里通过<code>view-transition-name</code>来设置名称</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span>&#123;  </span><br><span class="line">  view-<span class="attribute">transition</span>-name: <span class="built_in">var</span>(--i);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后可以得到这样的效果，每个元素在变化前后会自动找到之前的位置，并且平滑的移动过去，如下<br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312092327099.gif" alt=""><br>
+是不是非常丝滑？这就是 View Transitions 的魅力！</p>
+<p>在动画执行的过程中，还会在页面根节点自动创建以下伪元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">::view-transition  </span><br><span class="line">└─ ::<span class="built_in">view-transition-group</span>(root)  </span><br><span class="line">   └─ ::<span class="built_in">view-transition-image-pair</span>(root)  </span><br><span class="line">      ├─ ::<span class="built_in">view-transition-old</span>(root)  </span><br><span class="line">      └─ ::<span class="built_in">view-transition-new</span>(root)</span><br></pre></td></tr></table></figure>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312092327392.jpg" alt=""><br>
+其中，::view-transition-old表示「旧视图」的状态，也就是变化之前的截图，::view-transition-new表示「新视图」的状态，也就是变化之后的截图。</p>
+<p>默认情况下，整个页面root都会作为一个状态，也就是上面的::view-transition-group(root)，在切换前后会执行淡入淡出动画，如下</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span>::<span class="built_in">view-transition-new</span>(root) &#123;  </span><br><span class="line">  <span class="attribute">animation-name</span>: -ua-view-transition-fade-in; <span class="comment">/*淡入动画*/</span>  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="selector-pseudo">:root</span>::<span class="built_in">view-transition-old</span>(root) &#123;  </span><br><span class="line">  <span class="attribute">animation-name</span>: -ua-view-transition-fade-out; <span class="comment">/*淡出动画*/</span>  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这也是为什么在使用了<code>document.startViewTransition</code>后整个页面会有淡入淡出的效果了<br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312092326517.gif" alt=""></p>
+<p>详细的内容这里不再做过多赘述。</p>
+<p><a target="_blank" rel="noopener" href="https://1024code.com/~anzhiyu/ogecw6q">最佳实践:《View Transitions API》</a></p>
+<p>另外还有几个有趣的案例</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://1024code.com/codecubes/od7ai0p">《css动画拖拽排序》</a><br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312092327973.gif" alt=""></li>
+<li><a target="_blank" rel="noopener" href="https://1024code.com/codecubes/flb8khh">《数字过渡动画》</a><br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312092327142.gif" alt=""></li>
+<li><a target="_blank" rel="noopener" href="https://simple-set-demos.glitch.me/6-expanding-image/">类似于 APP 的转场动画（多页面跳转）</a><br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312092327599.gif" alt=""></li>
+</ol>
+<p>总的来说，原生的视图转换动画可以很轻松的实现两种状态的过渡，让 web 也能实现媲美原生 APP 的动画体验，下面再来回顾一下整个变化过程：</p>
+<ol>
+<li>
+<p>调用<code>document.startViewTransition</code>，浏览器会捕捉当前页面的状态，类似于实时截图，或者“快照”</p>
+</li>
+<li>
+<p>执行实际的 dom 变化，再次记录变化后的页面状态（截图）</p>
+</li>
+<li>
+<p>触发两者的过渡动画，包括透明度、位移等变化，也可以自定义 CSS 动画</p>
+</li>
+<li>
+<p>默认情况下是整个页面的淡入淡出变化</p>
+</li>
+<li>
+<p><code>::view-transition-old</code>表示<code>「旧视图」</code>的状态，也就是变化之前的截图，<code>::view-transition-new</code>表示<code>「新视图」</code>的状态，也就是变化之后的截图。</p>
+</li>
+<li>
+<p>如果需要指定具体元素的变化，可以给该元素指定<code>view-transition-name</code></p>
+</li>
+<li>
+<p>前后变化不一定要同一元素，浏览器是根据<code>view-transition-name</code>寻找的</p>
+</li>
+<li>
+<p>同一时间页面上不能出现两个相同view-transition-name的元素，不然视图变化会失效</p>
+</li>
+</ol>
+<p>另外，视图转换动画应该作为一种「体验增强」的功能，而非必要功能，在使用动画时其实拖慢了页面打开或者更新的速度，并且在动画过程中，页面是完全“冻结”的，做不了任何事情，因此需要衡量好动画的时间，如果页面本身就很慢就更不要使用这些动画了。</p>
+<p>参考链接<br>
+[1] View Transitions： <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API">https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API</a></p>
+<p>[2] view-transition sort (<a target="_blank" rel="noopener" href="http://juejin.cn">juejin.cn</a>)： <a target="_blank" rel="noopener" href="https://code.juejin.cn/pen/7268263402853072931">https://code.juejin.cn/pen/7268263402853072931</a></p>
+<p>[3] view-transition sort (<a target="_blank" rel="noopener" href="http://codepen.io">codepen.io</a>)： <a target="_blank" rel="noopener" href="https://codepen.io/xboxyan/pen/BavBevP">https://codepen.io/xboxyan/pen/BavBevP</a></p>
+<p>[4] view-transition-dialog (<a target="_blank" rel="noopener" href="http://juejin.cn">juejin.cn</a>)： <a target="_blank" rel="noopener" href="https://code.juejin.cn/pen/7268262983178911779">https://code.juejin.cn/pen/7268262983178911779</a></p>
+<p>[5] view-transition-dialog (<a target="_blank" rel="noopener" href="http://codepen.io">codepen.io</a>)： <a target="_blank" rel="noopener" href="https://codepen.io/xboxyan/pen/WNLeBgY">https://codepen.io/xboxyan/pen/WNLeBgY</a></p>
+<p>[6] view transition theme change - (<a target="_blank" rel="noopener" href="http://juejin.cn">juejin.cn</a>)： <a target="_blank" rel="noopener" href="https://code.juejin.cn/pen/7268257573277532219">https://code.juejin.cn/pen/7268257573277532219</a></p>
+<p>[7] view transition theme change (<a target="_blank" rel="noopener" href="http://codepen.io">codepen.io</a>)： <a target="_blank" rel="noopener" href="https://codepen.io/xboxyan/pen/poqzmLY">https://codepen.io/xboxyan/pen/poqzmLY</a></p>
+<hr>
+<h2 id="css属性占用">css属性占用</h2>
+<p>问题的原因，众所周知，CSS 中的transform是一个包含很多值的属性，例如</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;  </span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>) <span class="built_in">scale</span>(<span class="number">1.5</span>)  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是，这并不是简写，而是就该这么写，这一点和background不一样</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;  </span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&#x27;1xxx&#x27;</span>) <span class="number">10px</span> <span class="number">10px</span> / <span class="number">20px</span> <span class="number">20px</span> no-repeat;   </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">/*等同于以下写法*/</span>  </span><br><span class="line"><span class="selector-tag">div</span>&#123;  </span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&#x27;1xxx&#x27;</span>);   </span><br><span class="line">  <span class="attribute">background-position</span>: <span class="number">10px</span> <span class="number">10px</span>;  </span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">20px</span> <span class="number">20px</span>;  </span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分开写的好处在于，如果只需要改变某一部分就很容易覆盖</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.div1</span>&#123;  </span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&#x27;2xxx&#x27;</span>); <span class="comment">/*只改变图片，不改变其他*/</span>  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>回到前面，如果希望改变transform中的某一部分，就不太行了，必须把没改变的部分也写一遍，而且更改的部分也无法抽离出来作为一个公共的样式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.scale</span>&#123;  </span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">2</span>) <span class="comment">/*这样不行，会丢失translate*/</span>  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">/*必须写完整*/</span>  </span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.scale</span>&#123;  </span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>) <span class="built_in">scale</span>(<span class="number">2</span>)  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那如何巧妙的解决这个问题呢？</p>
+<ol>
+<li>
+<p>用其他方式来代替 <code>transform</code><br>
+碰到这种情况，第一感觉可能就是放弃原有<code>transform</code>属性，用其他方式代替。</p>
+<p>比如<code>translate(-50%, -50%)</code>一般是为了实现元素居中效果，可以用<code>flex</code>等其他方式实现</p>
+</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span>&#123;  </span><br><span class="line">  <span class="attribute">display</span>: flex  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="selector-tag">div</span>&#123;  </span><br><span class="line">  <span class="attribute">margin</span>: auto; <span class="comment">/*通过margin:auto实现居中*/</span>  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再比如<code>translate(10px, 10px)</code>这样的偏移，可以用<code>left</code>或者<code>margin-left</code>等方式实现</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;  </span><br><span class="line">  <span class="attribute">position</span>: relative;  </span><br><span class="line">  <span class="attribute">left</span>: <span class="number">10px</span>;  </span><br><span class="line">  <span class="attribute">top</span>: <span class="number">10px</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者干脆再包裹一层父级，也能避免<code>transform被占用</code>的问题。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;wrap&quot;&gt;  </span><br><span class="line">  &lt;<span class="selector-tag">div</span> class=&quot;box&quot;&gt;  </span><br><span class="line">      </span><br><span class="line">  &lt;/<span class="selector-tag">div</span>&gt;  </span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>不过，这些方式都是规避方式，其实还有官方解决方案</p>
+<ol start="2">
+<li>transform 的单独赋值<br>
+前面提到过<code>transform</code>并不是一个简写属性，所以没有办法像<code>background</code>那样对某一部分进行赋值。为了解决这个问题，从<code>Chrome 104</code>开始，浏览器终于正式支持单独赋值了</li>
+</ol>
+<p>有兴趣的可以参考这篇文章：<a target="_blank" rel="noopener" href="https://juejin.cn/post/7152331836578856967">解放生产力！transform 支持单独赋值改变</a></p>
+<p>就拿前面那个例子来说</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;  </span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>) <span class="built_in">scale</span>(<span class="number">1.5</span>)  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以写成</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;  </span><br><span class="line">  translate: -<span class="number">50%</span> -<span class="number">50%</span>;  </span><br><span class="line">  scale: <span class="number">1.5</span>  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样如果需要改变某一部分，就只需要像普通属性一样覆盖就行了</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.scale</span>&#123;  </span><br><span class="line">  scale: <span class="number">2</span>  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不过目前兼容性欠佳，谨慎使用！（适合内部项目尝鲜）</p>
+<ol start="3">
+<li>借助 CSS 变量拆分属性<br>
+前面的transform 的单独赋值虽然很好，但是太新了，无法立刻在项目中使用。下面介绍一个兼容性更好，使用更放心的解决方案。</li>
+</ol>
+<p>还是上面这个例子</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;  </span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>) <span class="built_in">scale</span>(<span class="number">1.5</span>)  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过 CSS 变量，将transform拆分</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;  </span><br><span class="line">  <span class="attr">--translate</span>: -<span class="number">50%</span>, -<span class="number">50%</span>;  </span><br><span class="line">  <span class="attr">--scale</span>: <span class="number">1.5</span>;  </span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="built_in">var</span>(--translate)) <span class="built_in">scale</span>(<span class="built_in">var</span>(--scale))  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>经过这样拆分以后，CSS 变量就成了独立属性，如果需要覆盖，只需要修改其中一个就行了，而无需关注–translate是什么样的，这样变化的部分就可以单独作为一个公共的样式了，如下</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div1</span>&#123;  </span><br><span class="line">  <span class="attr">--translate</span>: -<span class="number">50%</span>, -<span class="number">50%</span>;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="selector-class">.div1</span>&#123;  </span><br><span class="line">  <span class="attr">--translate</span>: <span class="number">10px</span>, <span class="number">10px</span>;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.scale</span>&#123;  </span><br><span class="line">  <span class="attr">--scale</span>: <span class="number">2</span>; <span class="comment">/*无需关注其他transform，可以作为公共的样式*/</span>  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>是不是非常清晰明了？下面是一个演示demo</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[type=<span class="string">&quot;checkbox&quot;</span>]</span><span class="selector-pseudo">:checked</span>+<span class="selector-tag">div</span>&#123;  </span><br><span class="line">  <span class="attr">--scale</span>: <span class="number">1.5</span>  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如下<br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312092327140.gif" alt=""></p>
+<ol>
+<li>完整代码可以查看以下任意链接：<br>
+<a target="_blank" rel="noopener" href="https://codepen.io/xboxyan/pen/BaVLMpv">CSS transform (codepen.io)</a><br>
+<a target="_blank" rel="noopener" href="https://code.juejin.cn/pen/7161704312681758755">CSS transform - 码上掘金 (juejin.cn)</a><br>
+<a target="_blank" rel="noopener" href="https://runjs.work/projects/4714accc300d441a">CSS transform (runjs.work)</a></li>
+</ol>
+<p>动是动了，但是没有过渡，太生硬了，那如何解决呢？</p>
+<p>这就需要用到<code>@property</code>了，是干什么的呢？简单来讲，可以自定义属性，让<code>自定义变量像颜色一样进行过渡和动画</code>，换句话说，现在执行动画的是<code>--scale</code>这个属性，而不再是<code>transform</code>了</p>
+<p>将这个自定义属性通过@property定义一下就行了，如下</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span> --scale &#123;   </span><br><span class="line">  syntax: <span class="string">&#x27;&lt;number&gt;&#x27;</span>;  </span><br><span class="line">  inherits: false;  </span><br><span class="line">  initial-value: <span class="number">1</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于<code>@property的应用</code>，可以参考以下文章</p>
+<p>@property: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/@property">https://developer.mozilla.org/zh-CN/docs/Web/CSS/@property</a></p>
+<p>其实不至于transform，很多类似的都可以用到这个技巧，比如颜色</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">el&#123;  </span><br><span class="line">  <span class="attr">--r</span>: <span class="number">255</span>;  </span><br><span class="line">  <span class="attr">--g</span>: <span class="number">255</span>;  </span><br><span class="line">  <span class="attr">--b</span>: <span class="number">255</span>;  </span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">rgb</span>(<span class="built_in">var</span>(--r), <span class="built_in">var</span>(--g), <span class="built_in">var</span>(--b));  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结一下</p>
+<ol>
+<li>部分 CSS 属性比较复杂，比如transform，很容易被占用</li>
+<li>通常的解决方式是规避，比如换一种居中方式，或者用left、top等代替</li>
+<li>新出现的transform 的单独属性可以解决这个问题，目前还比较新，仅适合内部项目尝鲜</li>
+<li>借助 CSS 变量可以拆分复杂的属性</li>
+<li>借助 @property 让CSS自定义属性支持过渡动画</li>
+<li>不仅仅是 transform，思维放开，复杂的属性都可以采取这样的思路</li>
+</ol>
+<h2 id="CSS-scroll-driven-animations">CSS scroll-driven animations</h2>
+<p>CSS 滚动驱动动画，在<code>Chrome 115</code>中被支持。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations</a></p>
+<p>可以参考这篇文章学习<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/xpMXcFTz53S2E1ntlvtZ0A">CSS 滚动驱动动画终于正式支持了~</a></p>
+<p>文章略长，建议收藏后反复查阅</p>
+
+        </article>
+        <div class="post-copyright">
+    <div class="post-copyright__author_group">
+        <a class="post-copyright__author_img" href="/about/"
+           data-pjax-state="">
+            <img class="post-copyright__author_img_back"
+                 src="https://bu.dusays.com/2023/11/01/6541f6d4b2573.png">
+            <img class="post-copyright__author_img_front"
+                 src="https://vip.helloimg.com/images/2023/11/09/od4KS5.png"></a>
+        <div class="post-copyright__author_name">大象研习社</div>
+        <div class="post-copyright__author_desc">万事相宜，千般吉愿。</div>
+    </div>
+    <div class="post-tools" id="post-tools">
+        <div class="post-tools-left">
+            
+            
+                <div class="reward-link mode">
+                    <a class="reward-link-button" href="">
+                        <i class="scoicon sco-plant-fill"></i>
+                        订阅
+                    </a>
+                </div>
+            
+        </div>
+    </div>
+    <div class="post-copyright__notice">
+        <span class="post-copyright-info">
+            本文是原创文章，
+            
+                采用 <a href="/copyright/" target="_blank">CC BY-NC-ND 4.0</a>
+                协议，完整转载请注明来自
+                <a href="/" target="_blank">大象研习社</a>
+            
+        </span>
+    </div>
+</div>
+
+        <div class="post-tools-right">
+            <div class="tag_share">
+                <div class="post-meta__tag-list">
+                    
+                        <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-meta__tags">
+                            <span class="tags-punctuation"></span>
+                            前端开发
+                            <span class="tagsPageCount">1</span>
+                        </a>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+            <nav class="needEndHide pagination-post" id="pagination">
+    
+        
+            <div class="next-post pull-full">
+                <a href="/p/f90a7abd.html">
+                    <div class="pagination-info">
+                        <div class="label">下一篇</div>
+                        <div class="next_info">保姆级教程！Stable Diffusion LoRA模型训练教程（新手篇）</div>
+                    </div>
+                </a>
+            </div>
+                
+        
+    
+</nav>
+        
+
+        
+
+        
+            <div id="post-comment" view-image>
+    <div class="comment-head">
+        <div class="comment-headline">
+            <i class="scoicon sco-chat-fill"></i>
+            <span> 评论</span>
+        </div>
+    </div>
+    <div class="comment-wrap">
+        <div id="comment"></div>
+        <script>
+    async function initComment(){
+        var initOptions = Object.assign(
+            {"envId":"https://twikoo.daxiang.work/","lang":"zh-CN","accessToken":null},
+            {
+                el: '#comment',
+                onCommentLoaded: function() {
+                    GLOBALCONFIG.lightbox && sco.lightbox('#article-container img, #twikoo .tk-content img:not(.tk-owo-emotion)')
+                },
+                lang: 'zh-CN',
+            }
+        )
+        await twikoo.init(initOptions)
+        
+            var countOptions = Object.assign(
+                {"envId":"https://twikoo.daxiang.work/","lang":"zh-CN","accessToken":null},
+                {
+                    urls: [window.location.pathname],
+                    includeReply: false
+                }
+            )
+            const res = await twikoo.getCommentsCount(countOptions)
+            try{
+                document.getElementById('twikoo-count').innerText = res[0].count
+            }catch (e) {
+                document.getElementById('twikoo-count').innerText = '加载错误'
+            }
+        
+    }
+</script>
+    </div>
+</div>
+        
+    </div>
+
+    <div class="aside-content" id="aside-content">
+    
+    
+        
+        <div class="card-widget card-info">
+    <div class="card-content">
+        <div class="card-info-avatar is-center">
+            <div class="author-info__top-group">
+                <div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">
+                    一日之计在于晨
+                </div>
+            </div>
+        </div>
+        <div class="avatar-img-group">
+            <img class="avatar-img" alt="avatar" src= "/img/loading.gif" data-lazy-src="https://vip.helloimg.com/images/2023/11/07/oc9OOK.png">
+            <div class="avatar-sticker">
+                <svg class="avatar-sticker-img"  alt="avatar" aria-hidden="true">
+                    <use xlink:href="#sco-smile"></use>
+                </svg>
+                
+<script src="https://cdn3.codesign.qq.com/icons/XgRxnjPG4VZLmqr/latest/iconfont.js"></script>
+
+            </div>
+        </div>
+        <div class="author-info__description_group">
+            <div class="author-info__description">分享自己对设计的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。</div>
+            <div class="author-info__description2">相信你可以在这里找到对你有用的知识和教程。</div>
+        </div>
+        <div class="author-info__bottom-group">
+            <a class="author-info__bottom-group-left" href="/about" data-pjax-state="">
+                <div class="author-info__name">
+                    Leo
+                </div>
+                <div class="author-info__desc">万事相宜，千般吉愿。</div>
+            </a>
+            <div class="card-info-social-icons is-center">
+                
+                    <a class="social-icon" target="_blank" rel="noopener" href="https://github.com/Armyh" title="Github">
+                        <i class="scoicon sco-github-line"></i>
+                    </a>
+                
+                    <a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/629229319" title="Bilibili">
+                        <i class="scoicon sco-bilibili-line"></i>
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+     
+    
+    <div class="sticky_layout">
+        
+            <div class="card-widget" id="card-toc">
+    <div class="item-headline">
+        <i class="scoicon sco-menu-line"></i>
+        <span>文章目录</span>
+    </div>
+    <div class="toc-content" id="toc-content">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E7%9A%84%E5%9C%86%E8%A7%92"><span class="toc-text">嵌套的圆角</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%E8%BD%AC%E6%8D%A2%E5%8A%A8%E7%94%BB-View-Transitions-API"><span class="toc-text">视图转换动画 View Transitions API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E5%B1%9E%E6%80%A7%E5%8D%A0%E7%94%A8"><span class="toc-text">css属性占用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-scroll-driven-animations"><span class="toc-text">CSS scroll-driven animations</span></a>
+    </div>
+</div>
+            
+        
+            
+        <style>
+    #aside-content .card-widget.card-platform {
+        background: var(--sco-main);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 0;
+        cursor: pointer;
+        border: none;
+        height: 110px;
+        border: var(--style-border);
+        transition: 0.6s
+    }
+    #aside-content .card-widget.card-platform:before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: url("https://img.meuicat.com/blog/14.webp") center center no-repeat;
+        content: '';
+        background-size: cover
+    }
+    #aside-content .card-widget.card-platform:hover:before {
+        filter: blur(12px) saturate(1.5);
+        transition: .3s
+    }
+    #aside-content .card-widget #flip-wrapper {
+        perspective: 1000;
+        position: relative;
+        width: 235px;
+        height: 110px;
+        z-index: 1
+    }
+    #aside-content .card-platform #flip-wrapper:hover #flip-content {
+        transform: rotateY(180deg)
+    }
+    #aside-content .card-platform #flip-wrapper #flip-content {
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: cubic-bezier(0, 0, 0, 1.29) 0.3s
+    }
+    #aside-content .card-platform #flip-wrapper #flip-content .face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background: url("https://img.meuicat.com/blog/15.webp") center center no-repeat;
+        background-size: 100%
+    }
+    #aside-content .card-platform #flip-wrapper #flip-content .face.back {
+        display: block;
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        box-sizing: border-box;
+        background: url("https://pic6.58cdn.com.cn/nowater/webim/big/n_v288526ae5372a4ba697e3b10248032c9e.png") center center no-repeat;
+        background-size: 100%
+    }
+    [data-theme='dark'] #aside-content .card-widget.card-platform {
+        background: var(--sco-card-bg)
+    }
+</style>
+<div class="card-widget card-platform">
+    <div id="flip-wrapper">
+        <div id="flip-content">
+            <div class="face"></div>
+            <div class="back face"></div>
+        </div>
+    </div>
+</div>
+     
+        
+            
+        <div class="card-widget card-recent-post">
+    <div class="item-headline">
+        <i class="scoicon sco-map-line"></i>
+        <span>最近发布</span>
+    </div>
+    <div class="aside-list">
+        
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/p/583429ec.html" title="那些年用过的CSS奇妙用法之能用CSS就不用JS技巧系列">
+                    <img
+                        alt="那些年用过的CSS奇妙用法之能用CSS就不用JS技巧系列"
+                        src="https://img.daxiang.work/202312092325447.webp">
+                </a>
+                <div class="content">
+                    
+                    <a class="title" href="/p/583429ec.html" title="那些年用过的CSS奇妙用法之能用CSS就不用JS技巧系列">
+                        那些年用过的CSS奇妙用法之能用CSS就不用JS技巧系列
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/p/f90a7abd.html" title="保姆级教程！Stable Diffusion LoRA模型训练教程（新手篇）">
+                    <img
+                        alt="保姆级教程！Stable Diffusion LoRA模型训练教程（新手篇）"
+                        src="https://img.daxiang.work/202311232337250.jpg">
+                </a>
+                <div class="content">
+                    
+                        <a class="article-recent_post_categories" href="/p/f90a7abd.html">
+                            软件推荐
+                        </a>
+                    
+                    <a class="title" href="/p/f90a7abd.html" title="保姆级教程！Stable Diffusion LoRA模型训练教程（新手篇）">
+                        保姆级教程！Stable Diffusion LoRA模型训练教程（新手篇）
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/p/4c6bb829.html" title="10个免费CDN前端静态资源托管库">
+                    <img
+                        alt="10个免费CDN前端静态资源托管库"
+                        src="https://img.daxiang.work/202311232224812.jpg">
+                </a>
+                <div class="content">
+                    
+                        <a class="article-recent_post_categories" href="/p/4c6bb829.html">
+                            软件推荐
+                        </a>
+                    
+                    <a class="title" href="/p/4c6bb829.html" title="10个免费CDN前端静态资源托管库">
+                        10个免费CDN前端静态资源托管库
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/p/2be9c18.html" title="设计师如何破解迷茫？2024年给设计师的10个成长锦囊">
+                    <img
+                        alt="设计师如何破解迷茫？2024年给设计师的10个成长锦囊"
+                        src="https://img.daxiang.work/202311232153386.jpg">
+                </a>
+                <div class="content">
+                    
+                        <a class="article-recent_post_categories" href="/p/2be9c18.html">
+                            闲聊杂谈
+                        </a>
+                    
+                    <a class="title" href="/p/2be9c18.html" title="设计师如何破解迷茫？2024年给设计师的10个成长锦囊">
+                        设计师如何破解迷茫？2024年给设计师的10个成长锦囊
+                    </a>
+                </div>
+            </div>
+                
+        
+            <div class="aside-list-item">
+                <a class="thumbnail" href="/p/f9b36ec6.html" title="刚入行设计师，如何快速成长？">
+                    <img
+                        alt="刚入行设计师，如何快速成长？"
+                        src="https://img.daxiang.work/202311232141939.jpg">
+                </a>
+                <div class="content">
+                    
+                        <a class="article-recent_post_categories" href="/p/f9b36ec6.html">
+                            闲聊杂谈
+                        </a>
+                    
+                    <a class="title" href="/p/f9b36ec6.html" title="刚入行设计师，如何快速成长？">
+                        刚入行设计师，如何快速成长？
+                    </a>
+                </div>
+            </div>
+            
+    </div>
+</div>
+     
+        
+            
+        <div class="card-widget card-tags card-archives card-webinfo card-allinfo">
+    <div class="card-tag-cloud">
+    
+        <a href="/tags/Markdown/" style="font-size: 0.8rem; color: #d3d3d3">Markdown<sup>1</sup></a>
+    
+        <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 0.8rem; color: #d3d3d3">教程<sup>2</sup></a>
+    
+        <a href="/tags/Stable-Diffusion/" style="font-size: 0.8rem; color: #d3d3d3">Stable Diffusion<sup>1</sup></a>
+    
+        <a href="/tags/LoRA/" style="font-size: 0.8rem; color: #d3d3d3">LoRA<sup>1</sup></a>
+    
+        <a href="/tags/%E5%BF%85%E7%9C%8B/" style="font-size: 0.8rem; color: #d3d3d3">必看<sup>3</sup></a>
+    
+        <a href="/tags/CDN/" style="font-size: 0.8rem; color: #d3d3d3">CDN<sup>1</sup></a>
+    
+        <a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 0.8rem; color: #d3d3d3">前端开发<sup>1</sup></a>
+    
+        <a href="/tags/AI%E7%BB%98%E7%94%BB/" style="font-size: 0.8rem; color: #d3d3d3">AI绘画<sup>3</sup></a>
+    
+        <a href="/tags/%E7%83%AD%E9%97%A8/" style="font-size: 0.8rem; color: #d3d3d3">热门<sup>3</sup></a>
+    
+        <a href="/tags/Photoshop/" style="font-size: 0.8rem; color: #d3d3d3">Photoshop<sup>1</sup></a>
+    
+</div>
+    <ul class="card-archive-list">
+    
+    
+        <li class="card-archive-list-item"><a class="card-archive-list-link" onclick="pjax.loadUrl('/archives/2023/')" data-pjax-state=""><span
+            class="card-archive-list-date">2023</span>
+            <div class="card-archive-list-count-group"><span class="card-archive-list-count">14</span><span
+                    class="card-archive-list-count-unit">篇</span></div>
+            </a>
+        </li>
+        
+</ul>
+
+    <hr>
+    <div class="webinfo">
+    
+    
+        
+        
+    
+    
+        <div class="webinfo-item">
+            <div class="webinfo-item-title">
+                <i class="item-icon scoicon sco-calendar-todo-fill"></i>
+                <div class="item-name">建站天数 :</div>
+            </div>
+            <div class="item-count" id="runtimeshow">
+            </div>
+        </div>
+    
+    
+    
+</div>
+</div>
+     
+        
+    </div>
+</div>
+
+    
+</main>
+        <footer id="footer">
+            <div id="sco-footer-bar">
+    <div class="footer-logo">
+        
+            <i style="background-image: url('https://vip.helloimg.com/images/2023/11/10/odlvE5.png')"></i>
+        
+    </div>
+    <div class="footer-bar-description">来自 大象研习社 最新设计与科技的文章</div>
+    <a class="footer-bar-link" href="/" data-pjax-state="">了解更多</a>
+</div>
+<div id="footer_deal">
+    
+        <a class="deal_link" target="_blank" href="https://github.com/Armyh" rel="external nofollow noopener"
+           title="Github">
+            <i class="scoicon sco-github-line"></i>
+        </a>
+    
+        <a class="deal_link" href="mailto:daxiangyanxishe@163.com" rel="external nofollow"
+           title="Mail">
+            <i class="scoicon sco-mail-line"></i>
+        </a>
+    
+    <img class="footer_mini_logo" src= "/img/loading.gif" data-lazy-src="https://vip.helloimg.com/images/2023/11/09/od4KS5.png"
+         title="返回顶部" onclick="sco.toTop()">
+    
+        <a class="deal_link" target="_blank" href="https://space.bilibili.com/629229319" rel="external nofollow noopener"
+           title="Bilibili">
+            <i class="scoicon sco-bilibili-line"></i>
+        </a>
+    
+        <a class="deal_link" href="https://" rel="external nofollow"
+           title="抖音">
+            <i class="scoicon sco-douyin-fill"></i>
+        </a>
+    
+</div>
+<div id="sco-footer">
+    
+    
+</div>
+<div id="footer-bar">
+    <div class="footer-bar-links">
+        <div class="footer-bar-left">
+            <div id="footer-bar-tips">
+                
+                    <div class="copyright">© 2023
+                        By
+                        <a class="footer-bar-link" href="/" rel="external nofollow">Leo</a>
+                    </div>
+                
+            </div>
+        </div>
+        <div class="footer-bar-right">
+            
+                <a class="footer-bar-link" href="/rss/" rel="external nofollow"
+                   target="_self">订阅</a>
+            
+            <a class="footer-bar-link" href="https://github.com/DuoSco/hexo-theme-solitude" rel="external nofollow"
+               target="_self">主题</a>
+            
+            <a class="footer-bar-link cc" href="/copyright/" target="_self" rel="external nofollow">
+                <i class="scoicon sco-copyright-line"></i>
+                <i class="scoicon sco-creative-commons-by-line"></i>
+                <i class="scoicon sco-creative-commons-nc-line"></i>
+                <i class="scoicon sco-creative-commons-nd-line"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="needEndHide" id="cookies-window">
+    <div class="cookies-window-title">协议提醒助手</div>
+    <div class="cookies-window-content">
+        <span class="cookies-tip">查看本站为你的个人隐私做出的努力</span>
+        <a class="cookies-link" href="/privacy/" title="本站如何保护你的隐私" data-pjax-state="">
+            <i class="scoicon sco-arrow-right-circle-fill"></i>
+        </a>
+    </div>
+</div>
+
+
+    <div class="comment-barrage">
+    </div>
+
+        </footer>
+    </div>
+
+<div>
+    
+
+<script src="https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js"></script>
+
+
+    
+<script src="/lib/lazyload.min.js"></script>
+
+
+
+<script src="/lib/snackbar.min.js"></script>
+
+
+    
+<script src="/lib/view-image.min.js"></script>
+
+
+
+    
+<script src="https://cdn.bootcdn.net/ajax/libs/Swiper/9.2.4/swiper-bundle.min.js"></script>
+
+
+
+<script src="/js/utils.js"></script>
+
+<div id="js-pjax">
+    <div id="rightMenu">
+    <div class="rightMenu-group rightMenu-small">
+        <div class="rightMenu-item" id="menu-backward">
+            <i class="scoicon sco-arrow-left-line"></i>
+        </div>
+        <div class="rightMenu-item" id="menu-forward">
+            <i class="scoicon sco-arrow-right-line"></i>
+        </div>
+        <div class="rightMenu-item" id="menu-refresh">
+            <i class="scoicon sco-restart-line" style="font-size: 19px;"></i>
+        </div>
+        <div class="rightMenu-item" id="menu-top">
+            <i class="scoicon sco-arrow-up-line"></i>
+        </div>
+    </div>
+    <div class="rightMenu-group rightMenu-line rightMenuPlugin">
+        <div class="rightMenu-item" id="menu-copytext">
+            <i class="scoicon sco-copy-fill"></i>
+            <span>复制选中文本</span>
+        </div>
+        <div class="rightMenu-item" id="menu-pastetext">
+            <i class="scoicon sco-clipboard-fill"></i>
+            <span>粘贴文本</span>
+        </div>
+        <a class="rightMenu-item" id="menu-commenttext" data-pjax-state="">
+            <i class="scoicon sco-chat-new-fill"></i>
+            <span>引用到评论</span>
+        </a>
+        <div class="rightMenu-item" id="menu-newwindow">
+            <i class="scoicon sco-window-fill"></i>
+            <span>新窗口打开</span>
+        </div>
+        <div class="rightMenu-item" id="menu-copylink">
+            <i class="scoicon sco-link-line"></i>
+            <span>复制链接地址</span>
+        </div>
+        <div class="rightMenu-item" id="menu-copyimg">
+            <i class="scoicon sco-copy-fill"></i>
+            <span>复制此图片</span>
+        </div>
+        <div class="rightMenu-item" id="menu-downloadimg">
+            <i class="scoicon sco-download-cloud-fill"></i>
+            <span>下载此图片</span>
+        </div>
+        <div class="rightMenu-item" id="menu-search">
+            <i class="scoicon sco-search-line"></i>
+            <span>站内搜索</span>
+        </div>
+        <div class="rightMenu-item" id="menu-searchBaidu">
+            <i class="scoicon sco-baidu-fill"></i>
+            <span>百度搜索</span>
+        </div>
+        <div class="rightMenu-item" id="menu-music-toggle">
+            <i class="scoicon sco-play-fill"></i>
+            <span>播放音乐</span>
+        </div>
+        <div class="rightMenu-item" id="menu-music-back">
+            <i class="scoicon sco-skip-back-fill"></i>
+            <span>切换到上一首</span>
+        </div>
+        <div class="rightMenu-item" id="menu-music-forward">
+            <i class="scoicon sco-skip-forward-fill"></i>
+            <span>切换到下一首</span>
+        </div>
+        <div class="rightMenu-item" id="menu-music-playlist"
+             onclick="window.open('https://y.qq.com/n/ryqq/playlist/8651639768', '_blank');">
+            <i class="scoicon sco-play-list-2-line"></i>
+            <span>查看所有歌曲</span></div>
+        <div class="rightMenu-item" id="menu-music-copyMusicName">
+            <i class="scoicon sco-copy-fill"></i>
+            <span>复制歌名</span>
+        </div>
+    </div>
+    <div class="rightMenu-group rightMenu-line rightMenuOther">
+        <a class="rightMenu-item menu-Link" id="menu-randomPost" data-pjax-state="">
+            <i class="scoicon sco-signal-tower-fill"></i>
+            <span>随便逛逛</span></a>
+        <a class="rightMenu-item menu-link" href="/categories/" data-pjax-state="">
+            <i class="scoicon sco-checkbox-multiple-blank-fill"></i>
+            <span>博客分类</span></a>
+        <a class="rightMenu-item menu-link" href="/tags/" data-pjax-state="">
+            <i class="scoicon sco-price-tag-fill"></i>
+            <span>文章标签</span></a>
+    </div>
+    <div class="rightMenu-group rightMenu-line rightMenuOther">
+        <div class="rightMenu-item" id="menu-copy">
+            <i class="scoicon sco-external-link-fill"></i>
+            <span>复制地址</span>
+        </div>
+        <div class="rightMenu-item" id="menu-commentBarrage">
+            <i class="scoicon sco-chat-fill"></i>
+            <span class="menu-commentBarrage-text">关闭热评</span>
+        </div>
+        <div class="rightMenu-item" id="menu-darkmode">
+            <i class="scoicon sco-moon-clear-fill"></i>
+            <span class="menu-darkmode-text">浅色模式</span>
+        </div>
+    </div>
+</div>
+<div id="rightmenu-mask"></div>
+    
+    
+</div>
+
+<script src="/js/main.js"></script>
+
+
+    
+<script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+    
+<script src="https://cdn.bootcdn.net/ajax/libs/meting/2.0.1/Meting.min.js"></script>
+
+    <script>
+        var meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+    </script>
+
+
+    
+<script src="/js/extend/covercolor/local.js"></script>
+
+
+
+
+
+
+    
+<script src="/js/extend/console/comment.js"></script>
+
+
+
+<script src="/js/rightmenu.js"></script>
+
+
+
+    <script data-pjax src="/js/commentBarrage.js"></script>
+
+
+
+
+
+
+
+    
+<script src="/js/txmap.js"></script>
+
+
+    <script>
+  let pjaxSelectors = [
+    'title',
+    '#body-wrap',
+    '#site-config',
+    'meta[name="description"]',
+    '#js-pjax'
+  ]
+
+  const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+  })
+
+  document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+</script>
+    
+</div>
+
+     
+<div class="needEndHide" id="nav-music" onclick="sco.musicToggle()">
+    <div id="nav-music-hoverTips">音乐已暂停</div>
+    <meting-js id="8651639768" server="tencent" type="playlist" mutex="true"
+        preload="none" data-lrctype="0" order="random" theme="var(--sco-main)"></meting-js>
+</div>
+
+</body>
+</html><script>const posts=["p/583429ec.html","p/f90a7abd.html","p/4c6bb829.html","p/2be9c18.html","p/f9b36ec6.html","p/9f3311bd.html","p/264620af.html","p/918081bf.html","p/725553c9.html","p/9d897d76.html","p/b174e4d0.html","p/e42fc4c8.html","p/50b666d3.html","p/c079e252.html"];function toRandomPost(){ pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]); };</script>
