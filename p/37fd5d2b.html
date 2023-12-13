@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PS生成式填充，Photoshop和AI的强强结合，到底有多强大？ | 大象研习社</title>
+<title>什么是CDN？它解决了什么难题？国内CDN加Vercel，无服务器使用办法 | 大象研习社</title>
 <noscript>开启Javascript是必要的</noscript>
 <link rel="icon" type="image/x-icon" href="https://vip.helloimg.com/images/2023/11/09/od4KS5.png">
 <meta name="description" content="一个平凡但不拘于世的不羁青年">
@@ -502,7 +502,7 @@
         </div>
         <div id="page-name-mask">
             <div id="page-name">
-                <a id="page-name-text" onclick="sco.toTop()">PS生成式填充，Photoshop和AI的强强结合，到底有多强大？</a>
+                <a id="page-name-text" onclick="sco.toTop()">什么是CDN？它解决了什么难题？国内CDN加Vercel，无服务器使用办法</a>
             </div>
         </div>
         <div id="menus">
@@ -653,7 +653,7 @@
 </nav>
     
         <div class="coverdiv" id="coverdiv">
-    <img id="post-cover" class="nolazyload" src="https://img.daxiang.work/202311221938519.webp" alt="cover">
+    <img id="post-cover" class="nolazyload" src="https://img.daxiang.work/202312131136092.webp" alt="cover">
 </div>
 <div id="post-info">
     <div id="post-firstinfo">
@@ -664,40 +664,35 @@
             
                 <span class="post-meta-categories">
                     
-                        <a class="post-meta-categories" href="/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/">软件推荐</a>
+                        <a class="post-meta-categories" href="/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a>
                     
                 </span>
             
             <div class="tag_share">
                 <div class="post-meta__tag-list">
                     
-                        <a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">
+                        <a class="post-meta__tags" href="/tags/CDN/">
                             <span class="tags-punctuation"></span>
-                            <span class="tags-name">教程</span>
-                        </a>
-                    
-                        <a class="post-meta__tags" href="/tags/Photoshop/">
-                            <span class="tags-punctuation"></span>
-                            <span class="tags-name">Photoshop</span>
+                            <span class="tags-name">CDN</span>
                         </a>
                     
                 </div>
             </div>
         </div>
     </div>
-    <h1 class="post-title">PS生成式填充，Photoshop和AI的强强结合，到底有多强大？</h1>
+    <h1 class="post-title">什么是CDN？它解决了什么难题？国内CDN加Vercel，无服务器使用办法</h1>
     <div id="post-meta">
         <div class="meta-secondline">
             
                 <span class="post-meta-date" title="发布于">
                 <i class="post-meta-icon scoicon sco-calendar-todo-fill"></i>
-                <time datetime="2023-11-09T00:00:01+08:00"></time>
+                <time datetime="2023-11-22T00:00:00+08:00"></time>
             </span>
             
             
                 <span class="post-meta-date" title="更新于">
                     <i class="post-meta-icon scoicon sco-refresh-line"></i>
-                    <time datetime="2023-12-10T00:26:41+08:00"></time>
+                    <time datetime="2023-12-13T14:59:28+08:00"></time>
                 </span>
             
             
@@ -710,13 +705,13 @@
                 
                     <span class="post-meta-wordcount">
                         <i class="scoicon sco-word-fill post-meta-icon" title="文章字数"></i>
-                        <span class="word-count">841</span>
+                        <span class="word-count">1.3k</span>
                     </span>
                 
                 
                     <span class="post-meta-time">
                         <i class="scoicon sco-clock-fill post-meta-icon" title="阅读耗时"></i>
-                        <span>2 min</span>
+                        <span>4 min</span>
                     </span>
                 
             
@@ -758,64 +753,66 @@
         <main class="layout" id="content-inner">
     <div id="post">
         <article class="post-content" id="article-container">
-            <p>Photoshop推出了「生成式填充」，这个功能已经出来好久了，我今天才用上。</p>
-<p>相比于midjourney这种生成式绘画ai，Photoshop比较好用的就是可以将图片通过选区功能编辑成想要的样子。相比于之前的智能填充，Ai填充可以将边缘更好的过渡并且能够添加原图中不存在的事物。</p>
-<p>让我们首先来尝试一下改图片吧！</p>
-<p>下面这个是原图：</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221937146.webp" alt="这个是原图"></p>
+            <p>最近遇到了部分地区vercel即便绑定了自定义域名任然有部分用户无法访问被阻断的情况，于是就打算给vercel套一层国内CDN，既然用户无法访问vercel的ip，那么就让用户去访问国内 CDN的节点，然后再让节点去回源访问vercel即可。</p>
+<p>该教程适用于无服务器的情况，如果有自己的服务器就没必要多此一举，而是可以直接使用国内CDN即可。注意大部分国内 CDN使用需要域名进行备案。</p>
 <hr>
-<h2 id="白色的连衣裙">白色的连衣裙</h2>
-<p>她们的衣服有点少，让我来给她们穿衣服吧，添加一个白色的连衣裙。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221937557.webp" alt="连衣裙"></p>
-<p>我简单的使用矩形工具来做了个选区，并没有做抠图操作，也没有使用选择主体功能，它非常轻松的做了个裙子。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221937009.webp" alt="穿裙子"></p>
-<p>并且Photoshop给我们提供了三个方案，我们还可以切换不同的方案。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221937643.webp" alt="方案3"></p>
-<p>我们可以看到Photoshop提供了一个新的图层类型，就是「生成式图层」。多久没出新图层类型了，泪目。</p>
-<p>生成式图层仍然支持图层的混合模式和图层样式。并且图层是有图层顺序的、支持后期编辑。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221937039.webp" alt="新的图层类型"></p>
-<p>我建议确定一个版本之后可以创建智能对象，然后在智能对象中继续创成式填充，以保留可编辑能力。</p>
+<h2 id="什么是CDN">什么是CDN?</h2>
+<p>CDN英文全称<code>Content Delivery Network</code>，中文翻译即为内容分发网络。它是建立并覆盖在承载网之上，由分布在不同区域的边缘节点服务器群组成的分布式网络。</p>
+<p>简而言之就是，厂商在全国各地都有很多很多的服务器，每一个服务器我们称之为节点，很多的节点组成了CDN。</p>
 <hr>
-<h2 id="来件长袖">来件长袖</h2>
-<p>这个女性也没多少衣服，也穿个符合当下环境的衣服吧。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221937241.webp" alt="加个羽绒服"></p>
-<p>加了衣服果然暖和多了。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221937296.webp" alt="添加衣服"></p>
-<p>总体看来效果还非常不错。</p>
+<h2 id="CDN工作原理">CDN工作原理</h2>
+<p>CDN的工作原理就是将源站的资源缓存到位于全国各地的CDN节点上，用户请求资源时，就近返回节点上缓存的资源，而不需要每个用户的请求都回您的源站获取，避免网络拥塞、分担源站压力，保证用户访问资源的速度和体验。</p>
+<p>在用户与源站之间加了一层CDN，用户先访问 CDN的节点，CDN节点再去源站拿取内容，当用户第二次访问的时候就会直接返回节点上缓存的内容，由于节点离用户近，所以用户拿到资源的速度就会缩短，访问也就变快了。</p>
+<p><strong>访问优先级</strong><br>
+通常情况下，中国内地的网络质量有以下特点：<br>
+用户访问同运营商的 IP 地址过程中的网络质量优于访问跨运营商的 IP 地址过程中的网络质量。<br>
+用户访问同省运营商的 IP 地址过程中的网络质量优于访问跨省运营商的 IP 地址过程中的网络质量。<br>
+用户访问跨省同运营商的 IP 地址过程中的网络质量优于访问同省跨运营商的 IP 地址过程中的网络质量。</p>
 <hr>
-<h2 id="凉快一点">凉快一点</h2>
-<p>这个图感觉还是太热了，让他们凉快一点吧。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221937678.webp" alt="加了个雪山"></p>
+<h2 id="自定义域名解析">自定义域名解析</h2>
+<p>在域名服务商进行域名解析<br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312131459268.jpg" alt=""><br>
+分两种情况，你要接入的国内CDN是否支持自定义host(目前测试腾讯云、多吉云都支持)</p>
+<p><strong>国内CDN支持自定义host</strong></p>
+<p><code>docs.daxiang.work</code> 境内地区 通过cname解析 到对应的国内CDN提供的cname域名<br>
+<code>docs.daxiang.work</code> 境外地区 通过cname解析 到<code>cname.vercel-dns.com</code>，来通过vercel的校验</p>
+<p><strong>国内CDN不支持自定义host</strong></p>
+<p><code>docs.daxiang.work</code> 境内地区 通过cname解析 到对应的国内CDN提供的cname域名<br>
+<code>docs.daxiang.work</code> 境外地区 通过cname解析 到<code>cname.vercel-dns.com</code>，来通过vercel的校验<br>
+<code>vcl-docs.daxiang.work</code> 通过cname解析 到<code>cname-china.vercel-dns.com</code>，来通过vercel的校验</p>
 <hr>
-<h2 id="图片变大">图片变大</h2>
-<p>因为我们的图片是竖版的，我们可以通过裁剪工具增加画布，然后用选区工具填充。</p>
-<p>我们可以<strong>不输入任何内容</strong>，直接点击生成。</p>
-<p>瞬间一个横版照片出来了。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221937043.webp" alt="照片阔图"></p>
-<p>确实还有一些瑕疵，不过这些都比较好去修。</p>
-<p>并且生成式图层是不允许直接编辑的。但是可以编辑蒙版。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221937541.webp" alt="不允许直接编辑"></p>
-<p>创成式图层栅格化之后的效果与盖印图层效果是一样的。所以需要编辑的时候我的建议是直接盖印图层（cmd+shift+option+E）。保留图层的历史。</p>
+<h2 id="vercel配置">vercel配置</h2>
+<p>我以文档域名 <code>docs.daxiang.work</code> 举例，将项目部署在vercel以后先绑定自定义域名<br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312131459166.jpeg" alt=""><br>
+如果你的国内CDN支持自定义host的话，只需要绑定一个自定义域名即可，如果你的国内CDN不支持自定义host的话，需要绑定两个自定义域名，此处我绑定了两个作为演示。</p>
+<p>国内大厂CDN一般都支持自定义回源host</p>
+<p>目前测试过<a target="_blank" rel="noopener" href="https://www.dogecloud.com/?iuid=4945">多吉云</a>，<a target="_blank" rel="noopener" href="https://cloud.tencent.com/">腾讯云</a>都是支持自定义回源host的</p>
 <hr>
-<h2 id="小结">小结</h2>
-<p>我们可以看到图片几乎是我们想做什么，就能做到什么，非常的厉害。</p>
+<h2 id="配置国内CDN">配置国内CDN</h2>
+<p>以<a target="_blank" rel="noopener" href="https://www.dogecloud.com/?iuid=4945">多吉云</a>为例(毕竟免费 20G，还能设置封顶策略)</p>
+<p>进入域名管理添加域名<br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312131459081.jpeg" alt=""><br>
+<img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312131459072.jpeg" alt=""><br>
+<strong>国内CDN支持自定义host</strong><br>
+回源域名填写 <code>cname-china.vercel.com</code><br>
+回源host选择 与加速域名一致 即为 <code>docs.daxiang.work</code></p>
+<p>改动回源host的目的是为了让vercel那边知道你需要回源到的域名。</p>
+<p><strong>国内CDN不支持自定义host</strong><br>
+如果你的国内CDN不支持选择回源host的话，你就需要使用到刚刚绑定的第二个自定义域名：<br>
+回源域名填写 <code>vcl-docs.daxiang.work</code><br>
+回源host就自动会和回源域名一致，就不用担心这个问题了，因为你直接回源到了一个国内能够被访问的域名<code>vcl-docs.daxiang.work</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 注意</span><br><span class="line"></span><br><span class="line">配置完了以后记得需要在国内 CDN这边上传自己的 ssl证书，否则会报ssl错误</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="蓝莓中的小樱桃">蓝莓中的小樱桃</h2>
-<p>比如我在一个蓝莓中生成一个樱桃。</p>
-<p>蓝莓的原图：</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221937847.webp" alt="蓝莓"></p>
-<p>加了一个樱桃：</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221938576.webp" alt="加了个樱桃"></p>
-<hr>
-<h2 id="敏感图片的尝试">敏感图片的尝试</h2>
-<p>尝试生成含有不文明的内容会收到警告。</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311221942243.jpg" alt="生成的图像已被移除，因为它们违反了用户准则。"></p>
-<p>在尝试不输入信息，但原图为敏感图片的内容时，也会收到警告。</p>
-<p>所以Photoshop的内容审查还是很不错的，不用担心会被人利用生成一些淫秽图片。</p>
-<hr>
-<h2 id="总结">总结</h2>
-<p>如果说midjourney颠覆了我对绘画的想象，可以干翻插画师，那么PhotoshopAI则满足了我对于平面设计师的期望。就是指哪打哪，想改啥就改啥。相比于设计师，Ai的修改速度非常快。我在测试下来每次的修改大概只需要20秒左右，非常迅速。</p>
-<p>通过midjourney来制作图片，然后通过PhotoshopAI来修bug，我觉得是未来一条崭新大道。</p>
+<h2 id="写在最后">写在最后</h2>
+<blockquote>
+<p>为什么不直接回源vercel自带的.app域名？</p>
+</blockquote>
+<p>因为vercel自带的.app域名目前被墙，国内CDN无法访问回源到vercel自带的.app域名，所以也就无法加速呈现出内容了。</p>
+<p>如果还有其他问题欢迎一起探讨，目前主题文档使用的就是这种方式来解决的部分地区无法解决的问题。</p>
+<blockquote>
+<p>为什么不直接使用多吉云放服务器上加速？</p>
+</blockquote>
+<p>一开始就说了，因为文档压根就没有想过要放在自己服务器上，一来是为了防止被攻击，毕竟vercel免费，但是如果有自己的服务器的话，还是建议直接放服务器上面进行加速，速度会更加可观，钱也很可观。</p>
 
         </article>
         <div class="post-copyright">
@@ -858,16 +855,10 @@
             <div class="tag_share">
                 <div class="post-meta__tag-list">
                     
-                        <a href="/tags/%E6%95%99%E7%A8%8B/" class="post-meta__tags">
+                        <a href="/tags/CDN/" class="post-meta__tags">
                             <span class="tags-punctuation"></span>
-                            教程
-                            <span class="tagsPageCount">3</span>
-                        </a>
-                    
-                        <a href="/tags/Photoshop/" class="post-meta__tags">
-                            <span class="tags-punctuation"></span>
-                            Photoshop
-                            <span class="tagsPageCount">1</span>
+                            CDN
+                            <span class="tagsPageCount">2</span>
                         </a>
                     
                 </div>
@@ -878,18 +869,18 @@
             <nav class="needEndHide pagination-post" id="pagination">
     
         <div class="prev-post pull-left">
-            <a href="/p/e42fc4c8.html">
+            <a href="/p/48442845.html">
                 <div class="pagination-info">
                     <div class="label">上一篇</div>
-                    <div class="prev_info">Storybird 可直接生成绘本故事AI神器</div>
+                    <div class="prev_info">AI开源大模型社区-魔搭社区</div>
                 </div>
             </a>
         </div>
         <div class="next-post pull-right">
-            <a href="/p/c079e252.html">
+            <a href="/p/583429ec.html">
                 <div class="pagination-info">
                     <div class="label">下一篇</div>
-                    <div class="next_info">Markdown教程</div>
+                    <div class="next_info">那些年用过的CSS奇妙用法之能用CSS就不用JS技巧系列</div>
                 </div>
             </a>
         </div>
@@ -897,7 +888,7 @@
 </nav>
         
 
-        <div class="relatedPosts"><div class="headline"><i class="scoicon sco-star-smile-fill"></i><span>喜欢这篇的人也看了</span><div class="relatedPosts-link"><a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">随便逛逛</a></div></div><div class="relatedPosts-list"><div><a href="/p/48442845.html" title="AI开源大模型社区-魔搭社区"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202312131132819.jpg" alt="cover"><div class="content is-center"><div class="title">AI开源大模型社区-魔搭社区</div></div></a></div><div><a href="/p/c079e252.html" title="Markdown教程"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://vip.helloimg.com/images/2023/11/09/odA1Mu.png" alt="cover"><div class="content is-center"><div class="title">Markdown教程</div></div></a></div></div></div>
+        <div class="relatedPosts"><div class="headline"><i class="scoicon sco-star-smile-fill"></i><span>喜欢这篇的人也看了</span><div class="relatedPosts-link"><a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">随便逛逛</a></div></div><div class="relatedPosts-list"><div><a href="/p/4c6bb829.html" title="10个免费CDN前端静态资源托管库"><img class="cover" src= "/img/loading.gif" data-lazy-src="https://img.daxiang.work/202311232224812.jpg" alt="cover"><div class="content is-center"><div class="title">10个免费CDN前端静态资源托管库</div></div></a></div></div></div>
 
         
             <div id="post-comment" view-image>
@@ -1003,7 +994,7 @@
         <span>文章目录</span>
     </div>
     <div class="toc-content" id="toc-content">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BD%E8%89%B2%E7%9A%84%E8%BF%9E%E8%A1%A3%E8%A3%99"><span class="toc-text">白色的连衣裙</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A5%E4%BB%B6%E9%95%BF%E8%A2%96"><span class="toc-text">来件长袖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%89%E5%BF%AB%E4%B8%80%E7%82%B9"><span class="toc-text">凉快一点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E5%8F%98%E5%A4%A7"><span class="toc-text">图片变大</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%93%9D%E8%8E%93%E4%B8%AD%E7%9A%84%E5%B0%8F%E6%A8%B1%E6%A1%83"><span class="toc-text">蓝莓中的小樱桃</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%8F%E6%84%9F%E5%9B%BE%E7%89%87%E7%9A%84%E5%B0%9D%E8%AF%95"><span class="toc-text">敏感图片的尝试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFCDN"><span class="toc-text">什么是CDN?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">CDN工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="toc-text">自定义域名解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vercel%E9%85%8D%E7%BD%AE"><span class="toc-text">vercel配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85CDN"><span class="toc-text">配置国内CDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="toc-text">写在最后</span></a></li></ol>
     </div>
 </div>
             
